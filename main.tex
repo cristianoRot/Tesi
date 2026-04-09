@@ -1,0 +1,179 @@
+% Tesi Informatica Bicocca - Cristiano Rotunno 914317
+
+% Carattere dimensione 12
+\documentclass[12pt]{report}
+
+% Per la stampa fronte-retro sostituire con:
+%\documentclass[12pt, twoside]{report}
+
+% Margini (4cm a sx, 2.5cm a dx, 2.5cm in alto, 2.5cm in basso)
+\usepackage[top=2.5cm, bottom=2.5cm, left=4cm, right=2.5cm, centering, head=21.75 pt]{geometry}
+
+% Interlinea standard 1.5
+\linespread{1.5}
+
+% --- Pacchetti Fondamentali per Lingua e Font ---
+\usepackage[T1]{fontenc}      % Gestione corretta dei caratteri accentati (evita buchi nel testo)
+\usepackage[utf8]{inputenc}    % Codifica caratteri
+\usepackage[italian]{babel}    % Sillabazione italiana
+\usepackage{microtype}         % MIGLIORA LA GIUSTIFICAZIONE: risolve i problemi di spaziature eccessive
+\usepackage{mathptmx}         % Font simile al Times New Roman
+
+% --- Librerie Matematiche e Grafiche ---
+\usepackage{amsmath} 
+\usepackage{amsthm} 
+\usepackage{amssymb}
+\usepackage{graphicx} 
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{float} 
+
+% --- Gestione Pagina e Stili ---
+\usepackage{scrlayer-scrpage} 
+\usepackage{parskip}
+\ifoot[]{}
+\cfoot[]{}
+\ofoot[\pagemark]{\pagemark}
+\pagestyle{scrplain}
+
+% --- Bibliografia e Citazioni ---
+\usepackage{csquotes} 
+\usepackage[backend=biber, sorting=nty]{biblatex} 
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\appto{\bibsetup}{\raggedright}
+\addbibresource{bibliography.bib}
+
+% --- Formattazione Titoli ---
+\usepackage{titlesec} 
+\titleformat{\chapter}[block]
+  {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{\LARGE}
+\titlespacing*{\chapter}{0pt}{-20pt}{25pt}
+
+% --- Gestione Codice Sorgente (HLSL/C#) ---
+\usepackage{xcolor}
+\usepackage{listings}
+
+% Definizione Colori Soft/Professional
+\definecolor{code_bg}{RGB}{245,245,247}      % Grigio chiarissimo (stile Apple/GitHub)
+\definecolor{code_keyword}{RGB}{0,51,153}    % Blu scuro professionale
+\definecolor{code_comment}{RGB}{120,120,120} % Grigio medio per i commenti
+\definecolor{code_string}{RGB}{163,21,21}    % Rosso scuro per le stringhe
+\definecolor{code_text}{RGB}{30,30,30}       % Testo quasi nero
+\definecolor{code_func}{RGB}{102,0,153}      % Viola per le funzioni
+
+\lstdefinelanguage{pseudo}{
+    morekeywords={for, each, in, if, else, return, new, function, while, break},
+    sensitive=false,
+    morecomment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+}
+
+\lstset{
+    language=pseudo,
+    backgroundcolor=\color{code_bg},
+    basicstyle=\color{code_text}\ttfamily\small,
+    keywordstyle=\color{code_keyword}\bfseries,
+    commentstyle=\color{code_comment}\itshape,
+    stringstyle=\color{code_string},
+    % Definizione funzioni per evidenziarle nel testo
+    emph={Draw, FindStaticObjectsWith, TransformToWorldSpace, AddVertices, BindMesh, BindMaterial, UploadToCBuffer, DrawInstanced},
+    emphstyle=\color{code_func},
+    % Layout pulito
+    numbers=none,           % Tolti i numeri di riga
+    frame=none,             % Tolte le linee di bordo
+    showspaces=false,
+    showstringspaces=false,
+    breaklines=true,
+    tabsize=4,
+    xleftmargin=10pt,       % Piccolo rientro per staccarlo dal testo
+    xrightmargin=10pt,
+    aboveskip=15pt,         % Spazio prima del codice
+    belowskip=15pt          % Spazio dopo il codice
+}
+
+\includeonly{capitolo1}
+
+\begin{document}
+
+% Frontespizio
+\begin{titlepage}
+\begin{center}
+    {\LARGE{Università degli Studi di Milano Bicocca \\}}
+    {\small{Dipartimento di Informatica, Sistemistica e Comunicazione}}\\
+    {\small{Corso di Laurea Triennale}}
+\end{center}
+    
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{logo.png}
+\end{figure}
+
+\begin{center}
+    {\Large { Analisi e ottimizzazione del videogioco Ares tramite tecniche di rendering in Unity }}
+\end{center}
+
+\vspace{2cm}
+
+\begin{minipage}[t]{0.47\textwidth}
+	{\large{\bf Relatore:\\ Prof. Gianluigi Ciocca}}
+	\vspace{0.5cm}
+	{\large{\bf \\Correlatore:\\ Dott. Davide Marelli}}
+\end{minipage}\hfill\begin{minipage}[t]{0.47\textwidth}\raggedleft
+	{\large{\bf Candidato: \\Cristiano Rotunno\\ }}
+\end{minipage}
+
+\vspace{25mm}
+
+\centering{\large{\bf ANNO ACCADEMICO 2025/2026 }}
+\end{titlepage}
+% Fine frontespizio
+
+\tableofcontents
+\thispagestyle{empty}
+
+% --- Struttura Capitoli ---
+
+% Introduzione
+\addcontentsline{toc}{chapter}{Introduzione} 
+\include{introduzione} % Crea il file introduzione.tex
+
+\clearpage
+
+% Capitolo 1: Ares
+\include{capitolo1} % Contenuto: 1.1 Presentazione, 1.2 Motivazioni
+
+\clearpage
+
+% Capitolo 2: Pipeline
+\include{capitolo2} % Contenuto: 2.1 HDRP, 2.2 Draw Call/Batching, 2.3 Shader teorico
+
+\clearpage
+
+% Capitolo 3: Profiling
+\include{capitolo3} % Contenuto: 3.1 Scena rif, 3.2 Tool Profiling, 3.3 Baseline
+
+\clearpage
+
+% Capitolo 4: Ottimizzazione pratica
+\include{capitolo4} % Contenuto: 4.1 Riduzione Draw Call, 4.2 Shader custom, 4.3 Lighting/Baking
+
+\clearpage
+
+% Capitolo 5: Risultati
+\include{capitolo5} % Contenuto: 5.1 Analisi comparativa
+
+\clearpage
+
+% Conclusioni
+\addcontentsline{toc}{chapter}{Conclusioni} 
+\include{conclusioni} % Crea il file conclusioni.tex
+
+\clearpage
+
+\printbibliography
+\addcontentsline{toc}{chapter}{Bibliografia}
+
+\end{document}
