@@ -1,4 +1,131 @@
 \chapter{Ottimizzazione}
-\section{Riduzione delle Draw Call}
 
-\section{Gestione dell'illuminazione: Real-Time vs Baking}
+\section{Light Baking}
+
+L'illuminazione rappresenta uno dei fattori di maggior carico computazionale all'interno della HDRP, specialmente in scenari complessi. Per ottimizzare questo aspetto, la prima azione intrapresa è stata la transizione da un sistema puramente dinamico a un approccio di \textbf{Light Baking} con configurazione \textbf{Mixed}.
+
+\subsection{Principi del Light Baking e Lighting Mixed}
+
+Il \textit{Light Baking} è il processo di pre-calcolo dell'interazione della luce con le superfici statiche della scena. I risultati di questi calcoli (ombre, intensità luminosa e \textit{Global Illumination}) vengono memorizzati in apposite texture chiamate \textit{Lightmaps}. In fase di esecuzione, il motore grafico non deve più calcolare queste interazioni in tempo reale, ma si limita a campionare le texture pre-generate.
+
+Per il progetto \textit{Ares} è stata adottata la modalità \textbf{Mixed Lighting}, che offre un compromesso ideale tra prestazioni e fedeltà visiva:
+\begin{itemize}
+    \item \textbf{Contributo Baked:} La geometria statica riceve luci e ombre pre-calcolate, abbattendo drasticamente il numero di \textit{shadow casters} dinamici che il motore deve gestire ad ogni frame.
+    \item \textbf{Contributo Real-Time:} Gli elementi dinamici, come il giocatore e gli oggetti mobili, continuano a ricevere e proiettare ombre in tempo reale, garantendo la coerenza necessaria per il gameplay.
+\end{itemize}
+
+\subsection{Analisi prestazionale post-baking}
+
+L'analisi effettuata tramite la \textit{Timeline View} del Profiler dopo l'applicazione del \textit{baking} ha rivelato un cambiamento strutturale nel comportamento dei thread e nella gestione della pipeline grafica.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{immagini/cap4/profiler_post_bake.png}
+    \caption{Analisi della Timeline View post-ottimizzazione delle luci: si nota l'azzeramento dei batch e la nuova distribuzione del carico.}
+    \label{fig:profiler_post_bake}
+\end{figure}
+
+Il confronto con la \textit{baseline} ha evidenziato i seguenti punti critici e miglioramenti:
+
+\begin{itemize}
+    \item \textbf{Risoluzione dello stallo del Main Thread:} Il dato più rilevante è la contrazione del tempo di \textit{Semaphore.WaitForSignal}, sceso dai $17.00\text{ ms}$ della baseline a soli \textbf{$6.38\text{ ms}$}. Questo indica che il \textit{Render Thread} è ora molto più rapido nel liberare il processore principale, eliminando i lunghi tempi morti di attesa.
+    \item \textbf{Azzeramento del Batch Count:} L'intervento ha permesso di ridurre il numero di \textbf{Batches} a \textbf{0}. Questo successo tecnico è dovuto alla rimozione dell'overhead causato dalle ombre in tempo reale per gli asset statici, permettendo all'SRP Batcher di operare con la massima efficienza. Parallelamente, si registra un incremento delle \textit{SetPass Calls} a \textbf{182}, causato dal caricamento delle diverse texture delle \textit{lightmaps}.
+    \item \textbf{Saturazione della GPU (GPU-bound):} Nonostante l'azzeramento dei batch abbia ridotto drasticamente il lavoro di "comunicazione" della CPU (il cui \textit{PlayerLoop} è sceso a soli $7.76\text{ ms}$), il tempo totale di frame rimane stabile sui \textbf{$32.85\text{ ms}$}. La causa risiede nei \textbf{$29.98\text{ M}$ di triangoli} che la GPU deve ancora processare fisicamente nel modulo \textit{ExecuteRenderGraph}.
+    \item \textbf{Struttura del RenderLoop:} Il \textit{Render Thread} appare ora diviso in due segmenti di attività distinti: una fase iniziale di preparazione e gestione delle ombre residue per gli oggetti dinamici ($\sim 8.30\text{ ms}$) e la fase di rendering principale ($\sim 16.09\text{ ms}$).
+\end{itemize}
+
+In sintesi, l'adozione del \textit{Light Baking} ha apportato un vantaggio significativo nel processo di comunicazione tra i componenti, riuscendo ad azzerare il \textit{batches count}. Tuttavia, si osserva che il tempo di rendering complessivo è rimasto pressoché identico rispetto alla \textit{baseline} ($\sim 32\text{ ms}$): questo fenomeno dimostra che il vero collo di bottiglia del sistema non risiede nella gestione dei comandi da parte della CPU, bensì nell'elevato numero di triangoli ($\sim 32.57\text{ M}$) che la GPU deve processare fisicamente ad ogni fotogramma.
+
+\section{Analisi della Complessità Geometrica}
+
+Nonostante l'azzeramento dei \textit{batches} ottenuto con il \textit{light baking}, il carico sul rasterizzatore della GPU è rimasto inizialmente invariato. Con un volume di circa \textbf{32.57 milioni di triangoli} per fotogramma, è stato necessario indagare la complessità delle singole mesh per individuare la causa della saturazione hardware.
+
+\subsection{Script di analisi mesh}
+
+Per condurre un'indagine accurata, è stato sviluppato uno script \textit{Editor} personalizzato. Tale strumento ha permesso di scansionare l'intera gerarchia della scena e generare in console una classifica delle mesh, ordinate per numero di triangoli intrinseci alla singola istanza (Figura \ref{fig:classifica_mesh}).
+
+L'obiettivo dello script era superare la visione d'insieme delle \textit{Statistics} di Unity, che riportano solo il dato aggregato, per identificare con precisione chirurgica quali modelli 3D necessitassero di un intervento di ottimizzazione o di una revisione strutturale.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{immagini/cap4/classifica_mesh_console.png}
+    \caption{Output dello script: analisi dei modelli 3D ordinati per densità poligonale.}
+    \label{fig:classifica_mesh}
+\end{figure}
+
+\subsection{Identificazione dell'asset critico}
+
+L'analisi dei dati ha rivelato immediatamente il principale responsabile dell'eccessivo carico geometrico: l'asset denominato \textbf{SM\_MergedRoad}. 
+
+I dati estratti hanno evidenziato una gestione inefficiente della risorsa:
+\begin{itemize}
+    \item \textbf{Peso Monolitico:} Al livello di dettaglio massimo (\textit{LOD0}), la mesh della strada presenta oltre \textbf{2.5 milioni di triangoli}.
+    \item \textbf{Dimensioni Scalari:} Essendo un unico oggetto "fuso" che attraversa l'intera pianta industriale, la sua \textit{Bounding Box} risulta costantemente intersecata dal campo visivo della camera. Questo impedisce al sistema di \textit{Occlusion Culling} di scartare l'asset, forzando la GPU a renderizzare milioni di poligoni anche quando solo una minima parte della strada è effettivamente visibile.
+\end{itemize}
+
+Questa scoperta ha confermato un errore nella strutturazione della scena, dove un singolo oggetto monolitico rendeva inefficaci gli algoritmi di visibilità del motore grafico.
+
+\section{Mesh Splitting}
+
+L'identificazione dell'asset \textit{SM\_MergedRoad} come principale responsabile del carico geometrico ha evidenziato un limite strutturale intrinseco ai motori di rendering: l'impossibilità di operare un \textit{culling} efficace su mesh di grandi dimensioni. Un oggetto monolitico che attraversa l'intero scenario forza la GPU a processare l'intera geometria anche quando solo una frazione minima è contenuta nel frustum della camera. 
+
+Per risolvere tale criticità, si è proceduto alla scomposizione dell'asset originale in una struttura modulare, ottimizzata per i sistemi di visibilità di Unity.
+
+\subsection{Scomposizione Spaziale}
+
+Data l'elevata densità poligonale dell'asset ($\sim 2.5$ milioni di triangoli per il solo LOD0) e la necessità di mantenere una sincronia perfetta tra i sei livelli di dettaglio (LOD0-LOD5), si è scelto di automatizzare il processo di splitting in ambiente Blender.
+
+Invece di operare tagli distruttivi manuali, è stato sviluppato uno script personalizzato basato su librerie \textbf{NumPy} e API \textbf{Bmesh}. La logica implementata segue il principio della \textit{Spatial Selection by Centroid}:
+\begin{itemize}
+    \item L'intero impianto è stato mappato su una griglia bidimensionale.
+    \item Ogni singola faccia della mesh originale è stata analizzata e assegnata a una cella della griglia in base alla posizione del proprio centroide.
+    \item L'asset monolitico è stato così ripartito in \textbf{157 blocchi indipendenti}.
+\end{itemize}
+
+L'importazione in Unity della mesh suddivisa ha permesso di passare da un'unica gerarchia statica a un sistema dinamico e granulare. Il confronto tra la struttura monolitica originale e quella suddivisa (Figura \ref{fig:hierarchy_comparison}) evidenzia il passaggio a una gestione basata su \textit{cluster} spaziali.
+
+\begin{figure}[H]
+    \centering
+    \subfigure[Hierarchy Originale: asset monolitico.]{
+        \includegraphics[width=0.45\textwidth]{immagini/cap4/hierarchy_road_monolitica.png}
+        \label{fig:hierarchy_monolitica}
+    }
+    \hfill
+    \subfigure[Hierarchy Ottimizzata: 157 blocchi con gestione LOD indipendente.]{
+        \includegraphics[width=0.45\textwidth]{immagini/cap4/hierarchy_road_split.png}
+        \label{fig:hierarchy_split}
+    }
+    \caption{Confronto della struttura dell'asset in Unity.}
+    \label{fig:hierarchy_comparison}
+\end{figure}
+
+\subsection{Analisi dell'impatto su Occlusion Culling e Performance}
+
+Il confronto diretto tra le rilevazioni del Profiler effettuate prima e dopo la scomposizione della ferrovia in 157 blocchi (Figura \ref{fig:profiler_comparison}) evidenzia un miglioramento strutturale nell'efficienza della pipeline di rendering.
+
+\begin{figure}[H]
+    \centering
+    \subfigure[Stato Originale: (32.34 ms).]{
+        \includegraphics[width=0.9\textwidth]{immagini/cap4/profiler_original_road.png}
+        \label{fig:profiler_original}
+    }
+    \vspace{5mm}
+    \subfigure[Stato Ottimizzato: (25.65 ms).]{
+        \includegraphics[width=0.9\textwidth]{immagini/cap4/profiler_splitted_road.png}
+        \label{fig:profiler_splitted}
+    }
+    \caption{Confronto delle prestazioni tramite.}
+    \label{fig:profiler_comparison}
+\end{figure}
+
+L'analisi dei dati evidenzia tre miglioramenti fondamentali:
+
+\begin{itemize}
+    \item \textbf{Carico Geometrico:} Il dato più rilevante riguarda il conteggio dei triangoli renderizzati, che passa da \textbf{28.63M} a \textbf{13.83M}, registrando una riduzione del \textbf{51.7\%}. Questo dimostra che, sebbene la geometria totale dell'impianto sia rimasta invariata, la scomposizione in 157 blocchi ha permesso al sistema di \textit{Occlusion Culling} di scartare metà della scena che prima veniva processata inutilmente.
+    
+    \item \textbf{Tempi di CPU:} Il tempo di esecuzione del \textit{Main Thread} è sceso da \textbf{32.34 ms} a \textbf{25.65 ms}. Questo guadagno prestazionale è legato alla riduzione dello stallo causato dalla GPU: il valore di \textit{Semaphore.WaitForSignal} è infatti passato da circa \textbf{10.94 ms} a \textbf{4.84 ms}, indicando una comunicazione molto più fluida tra i processori grazie al minor carico di rendering immediato.
+    
+    \item \textbf{Analisi della Memoria:} Nonostante la scomposizione, la \textit{Mesh Memory} è rimasta invariata a circa \textbf{11 GB}. L'invarianza di questo dato, pur a fronte di una drastica riduzione dei triangoli effettivamente renderizzati, suggerisce che il sistema sia ancora influenzato dall'elevato numero di oggetti totali presenti nella gerarchia ($\sim 20.000$ asset). Questo scenario sposta il collo di bottiglia dalla complessità geometrica della singola mesh all'overhead gestionale della CPU, confermando che la saturazione del Main Thread è ora causata dalla quantità di trasformazioni e controlli di visibilità che il motore deve processare per l'intera scena.
+\end{itemize}
+
+In conclusione, i dati del Profiler confermano che l'intervento di modularizzazione ha rimosso con successo il principale collo di bottiglia prestazionale legato alla natura monolitica della mesh ferroviaria, permettendo al motore grafico di operare una selezione spaziale finalmente efficace. Tuttavia, l'analisi evidenzia la persistenza di un secondo collo di bottiglia critico, strettamente legato alla saturazione della memoria e ai tempi di calcolo del \textit{Main Thread}. Si sospetta che tale criticità sia riconducibile all'elevatissimo numero di oggetti presenti nella gerarchia della scena ($\sim 20.000$ asset); la CPU, sebbene sgravata dal peso geometrico della strada, rimane congestionata dall'overhead gestionale necessario per processare i controlli di visibilità, le trasformazioni e la logica di \textit{culling} per una mole così vasta di elementi indipendenti.

@@ -32,8 +32,15 @@
 \contentsline {subsubsection}{Geometria ed Efficienza dei Batch}{22}{subsection.3.3.2}%
 \contentsline {subsubsection}{Profiling della Timeline}{23}{figure.caption.14}%
 \contentsline {chapter}{\numberline {4}Ottimizzazione}{26}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Riduzione delle Draw Call}{26}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Gestione dell'illuminazione: Real-Time vs Baking}{26}{section.4.2}%
-\contentsline {chapter}{\numberline {5}Valutazione dei Risultati}{27}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Analisi comparativa}{27}{section.5.1}%
-\contentsline {chapter}{Conclusioni}{28}{section.5.1}%
+\contentsline {section}{\numberline {4.1}Light Baking}{26}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Principi del Light Baking e Lighting Mixed}{26}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Analisi prestazionale post-baking}{27}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Analisi della Complessità Geometrica}{28}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Script di analisi mesh}{28}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Identificazione dell'asset critico}{29}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Mesh Splitting}{29}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Scomposizione Spaziale}{30}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Analisi dell'impatto su Occlusion Culling e Performance}{31}{subsection.4.3.2}%
+\contentsline {chapter}{\numberline {5}Valutazione dei Risultati}{34}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Analisi comparativa}{34}{section.5.1}%
+\contentsline {chapter}{Conclusioni}{35}{section.5.1}%

@@ -3,10 +3,33 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Ottimizzazione}{26}{chapter.4}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Riduzione delle Draw Call}{26}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Gestione dell'illuminazione: Real-Time vs Baking}{26}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Light Baking}{26}{section.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Principi del Light Baking e Lighting Mixed}{26}{subsection.4.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}Analisi prestazionale post-baking}{27}{subsection.4.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Analisi della Timeline View post-ottimizzazione delle luci: si nota l'azzeramento dei batch e la nuova distribuzione del carico.}}{27}{figure.caption.16}\protected@file@percent }
+\newlabel{fig:profiler_post_bake}{{4.1}{27}{Analisi della Timeline View post-ottimizzazione delle luci: si nota l'azzeramento dei batch e la nuova distribuzione del carico}{figure.caption.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Analisi della Complessità Geometrica}{28}{section.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Script di analisi mesh}{28}{subsection.4.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Output dello script: analisi dei modelli 3D ordinati per densità poligonale.}}{29}{figure.caption.17}\protected@file@percent }
+\newlabel{fig:classifica_mesh}{{4.2}{29}{Output dello script: analisi dei modelli 3D ordinati per densità poligonale}{figure.caption.17}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Identificazione dell'asset critico}{29}{subsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Mesh Splitting}{29}{section.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Scomposizione Spaziale}{30}{subsection.4.3.1}\protected@file@percent }
+\newlabel{fig:hierarchy_monolitica}{{4.3(a)}{31}{Subfigure 4 4.3(a)}{subfigure.4.3.1}{}}
+\newlabel{sub@fig:hierarchy_monolitica}{{(a)}{31}{Subfigure 4 4.3(a)\relax }{subfigure.4.3.1}{}}
+\newlabel{fig:hierarchy_split}{{4.3(b)}{31}{Subfigure 4 4.3(b)}{subfigure.4.3.2}{}}
+\newlabel{sub@fig:hierarchy_split}{{(b)}{31}{Subfigure 4 4.3(b)\relax }{subfigure.4.3.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Confronto della struttura dell'asset in Unity.}}{31}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:hierarchy_comparison}{{4.3}{31}{Confronto della struttura dell'asset in Unity}{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Analisi dell'impatto su Occlusion Culling e Performance}{31}{subsection.4.3.2}\protected@file@percent }
+\newlabel{fig:profiler_original}{{4.4(a)}{32}{Subfigure 4 4.4(a)}{subfigure.4.4.1}{}}
+\newlabel{sub@fig:profiler_original}{{(a)}{32}{Subfigure 4 4.4(a)\relax }{subfigure.4.4.1}{}}
+\newlabel{fig:profiler_splitted}{{4.4(b)}{32}{Subfigure 4 4.4(b)}{subfigure.4.4.2}{}}
+\newlabel{sub@fig:profiler_splitted}{{(b)}{32}{Subfigure 4 4.4(b)\relax }{subfigure.4.4.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Confronto delle prestazioni tramite.}}{32}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:profiler_comparison}{{4.4}{32}{Confronto delle prestazioni tramite}{figure.caption.19}{}}
 \@setckpt{capitolo4}{
-\setcounter{page}{27}
+\setcounter{page}{34}
 \setcounter{equation}{0}
 \setcounter{enumi}{0}
 \setcounter{enumii}{0}
@@ -16,12 +39,12 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{4}
-\setcounter{section}{2}
-\setcounter{subsection}{0}
+\setcounter{section}{3}
+\setcounter{subsection}{2}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{0}
+\setcounter{figure}{4}
 \setcounter{table}{0}
 \setcounter{parentequation}{0}
 \setcounter{subfigure}{0}
@@ -148,7 +171,7 @@
 \setcounter{section@level}{0}
 \setcounter{Item}{0}
 \setcounter{Hfootnote}{0}
-\setcounter{bookmark@seq@number}{30}
+\setcounter{bookmark@seq@number}{37}
 \setcounter{lstnumber}{14}
 \setcounter{lstlisting}{0}
 }
