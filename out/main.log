@@ -1,10 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.9)  5 JUL 2026 11:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.9)  6 JUL 2026 01:11
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/cristiano/Desktop/Tesi/main.tex
-(/Users/cristiano/Desktop/Tesi/main.tex
+**main.tex
+(./main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (/usr/local/texlive/2026/texmf-dist/tex/latex/base/report.cls
@@ -24,14 +23,18 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
- (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count284
@@ -46,28 +49,42 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen155
 \Gm@layoutvoffset=\dimen156
 \Gm@dimlist=\toks18
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks19
 \inpenc@posthook=\toks20
-) (/usr/local/texlive/2026/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2026/03/08 v26.4 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/03/08 v26.4 The multilingual framework for LuaLaTeX, pdfLaT
+eX and XeLaTeX
 \babel@savecnt=\count287
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2111.
 \U@D=\dimen157
 \l@unhyphenated=\language91
- (/usr/local/texlive/2026/texmf-dist/tex/generic/babel/txtbabel.def)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count288
- (/usr/local/texlive/2026/texmf-dist/tex/generic/babel/locale/it/babel-italian.tex)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/locale/it/babel-italian.t
+ex)
 Package babel Info: Importing font and identification data for italian
 (babel)             from babel-it.ini. Reported on input line 4330.
  (/usr/local/texlive/2026/texmf-dist/tex/generic/babel-italian/italian.ldf
@@ -78,7 +95,8 @@ Language: italian 2026/01/13 v.1.5.02 Italian support for the babel system
 )) (/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count292
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2026/03/01 v3.2d Micro-typographical refinements (RS)
 \MT@toks=\toks21
 \MT@tempbox=\box53
@@ -92,18 +110,22 @@ LaTeX Info: Redefining \textls on input line 1449.
 LaTeX Info: Redefining \microtypecontext on input line 2053.
 LaTeX Info: Redefining \textmicrotypecontext on input line 2070.
 \MT@listname@count=\count294
- (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2026/03/01 v3.2d Definitions specific to pdftex (RS)
+
 LaTeX Info: Redefining \lsstyle on input line 944.
 LaTeX Info: Redefining \lslig on input line 944.
 \MT@outer@space=\skip51
 )
 Package microtype Info: Loading configuration file microtype.cfg.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.cfg
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2026/03/01 v3.2d microtype main configuration file (RS)
 )
 LaTeX Info: Redefining \microtypesetup on input line 3065.
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/mathptmx.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/mathptmx.sty
 Package: mathptmx 2020/03/25 PSNFSS-v9.3 Times w/ Math, improved (SPQR, WaS) 
 LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -138,21 +160,25 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
 LaTeX Info: Redefining \hbar on input line 50.
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
- (/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks23
 \ex@=\dimen159
-)) (/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen160
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count295
@@ -202,7 +228,8 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks27
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/amscls/amsthm.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks28
 \thm@bodyfont=\toks29
@@ -213,30 +240,38 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@postskip=\skip56
 \thm@headsep=\skip57
 \dth@everypar=\toks33
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup6
 \symAMSb=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen168
 \Gin@req@width=\dimen169
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/subfigure/subfigure.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip58
 \subfigcapskip=\skip59
@@ -255,7 +290,8 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 (/usr/local/texlive/2026/texmf-dist/tex/latex/subfigure/subfigure.cfg)
 \subfig@top=\skip62
 \subfig@bottom=\skip63
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen172
 \lightrulewidth=\dimen173
@@ -274,9 +310,11 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count313
 \@lastruleclass=\count314
 \@thisrulewidth=\dimen184
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen185
 \captionmargin=\dimen186
@@ -291,42 +329,62 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count315
 \c@continuedfloat=\count316
 Package caption Info: subfigure package is loaded.
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/float/float.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count317
 \float@exts=\toks34
 \float@box=\box56
 \@float@everytoks=\toks35
 \@floatcapt=\box57
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
-Package: scrlayer-scrpage 2026/02/02 v3.49.2 KOMA-Script package (end user interface for scrlayer)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlayer.sty
-Package: scrlayer 2026/02/02 v3.49.2 KOMA-Script package (defining layers and page styles)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlfile.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+Package: scrlayer-scrpage 2026/02/02 v3.49.2 KOMA-Script package (end user inte
+rface for scrlayer)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlayer.sty
+Package: scrlayer 2026/02/02 v3.49.2 KOMA-Script package (defining layers and p
+age styles)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-dependent
+ basics and keyval usage)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independen
+t basics and keyval usage)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hooks)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlogo.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hook
+s)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlogo.sty
 Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
 )))
 Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
-Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 370.
 ))
 \footheight=\skip64
-Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 2179.
-)) (/usr/local/texlive/2026/texmf-dist/tex/latex/parskip/parskip.sty
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 217
+9.
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
- (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
- (/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-))) (/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.sty
+)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
 \csq@reset=\count318
 \csq@gtype=\count319
@@ -335,31 +393,41 @@ Package: csquotes 2024-04-04 v5.2o context-sensitive quotations (JAW)
 \csq@maxlvl=\count322
 \csq@tshold=\count323
 \csq@ltx@everypar=\toks36
- (/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.cfg
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
-)) (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
- (/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count324
- (/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
-)) (/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -422,7 +490,8 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 \c@mincompwidth=\count370
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-dm.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-dm.def
 File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
@@ -511,12 +580,14 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \localshorteditorwidth=\skip86
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-compat.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 \c@textcitecount=\count439
 \c@textcitetotal=\count440
@@ -534,18 +605,21 @@ File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 )
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
 File: numeric.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count448
 \c@bbx:relatedtotal=\count449
 ))
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/cbx/numeric.cbx
 File: numeric.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -561,14 +635,17 @@ Package biblatex Info: Redefining '\smartcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.cfg
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Document encoding is UTF8 ....
- (/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2026-01-19 L3 programming layer (loader) 
- (/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count450
 ))
@@ -576,41 +653,55 @@ Package biblatex Info: ... and expl3
 (biblatex)             2026-01-19 L3 programming layer (loader) 
 (biblatex)             is new enough (at least 2020/04/06),
 (biblatex)             setting 'casechanger=expl3'.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty (/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/blx-case-expl3.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2025-10-09 L3 Experimental document command parser
 )
 Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
-)) (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
- (/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
- (/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count451
 ) (/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
 )
 \@linkdim=\dimen193
 \Hy@linkcounter=\count452
 \Hy@pagecounter=\count453
- (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count454
- (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -625,10 +716,13 @@ Package hyperref Info: Bookmarks ON on input line 4468.
 \c@Hy@tempcnt=\count455
 LaTeX Info: Redefining \url on input line 4807.
 \XeTeXLinkMargin=\dimen194
- (/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
 \Fld@menulength=\count456
 \Field@Width=\dimen195
@@ -645,16 +739,20 @@ Package hyperref Info: PDF/A mode OFF on input line 6114.
 \c@Hfootnote=\count459
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
 \Fld@listcount=\count460
 \c@bookmark@seq@number=\count461
- (/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
- (/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
 )
 \Hy@SectionHShift=\skip87
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/titlesec/titlesec.sty
@@ -668,13 +766,16 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidth=\dimen199
 \titlewidthlast=\dimen256
 \titlewidthfirst=\dimen257
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
- (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -684,7 +785,8 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/listings.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count462
 \lst@gtempboxa=\box59
 \lst@token=\toks38
@@ -697,14 +799,17 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 \lst@newlines=\count466
 \lst@lineno=\count467
 \lst@maxwidth=\dimen261
- (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstpatch.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstmisc.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
 \c@lstnumber=\count468
 \lst@skipnumbers=\count469
 \lst@framebox=\box60
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/listings/listings.cfg
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
@@ -719,10 +824,20 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'italian'.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 97.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 97
+.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
-) (out/main.aux (out/introduzione.aux) (out/capitolo1.aux) (out/capitolo2.aux) (out/capitolo3.aux) (out/capitolo4.aux) (out/capitolo5.aux) (out/conclusioni.aux))
+) (out/main.aux
+(out/introduzione.aux) (out/capitolo1.aux) (out/capitolo2.aux)
+(out/capitolo3.aux) (out/capitolo4.aux) (out/capitolo5.aux
+
+LaTeX Warning: Label `fig:memory_profiler_baseline' multiply defined.
+
+
+LaTeX Warning: Label `fig:memory_profiler_optimized' multiply defined.
+
+))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
@@ -801,7 +916,8 @@ Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
-) (/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+)
+(/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count470
 \scratchdimen=\dimen262
@@ -816,9 +932,12 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 \everyMPtoPDFconversion=\toks40
 ) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
@@ -827,7 +946,8 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'italian'...
 Package biblatex Info: ... file 'italian.lbx' found.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/biblatex/lbx/italian.lbx
 File: italian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -837,7 +957,8 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (out/main.bbl)
+
+(out/main.bbl)
 Package biblatex Info: Reference section=0 on input line 97.
 Package biblatex Info: Reference segment=0 on input line 97.
 Package hyperref Info: Link coloring OFF on input line 97.
@@ -846,36 +967,48 @@ Package hyperref Info: Link coloring OFF on input line 97.
 \openout4 = `main.out'.
 
 \c@lstlisting=\count476
-<logo.png, id=183, 609.27625pt x 602.25pt>
+<logo.png, id=188, 609.27625pt x 602.25pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
 Package pdftex.def Info: logo.png  used on input line 109.
 (pdftex.def)             Requested size: 171.7382pt x 169.75916pt.
  [1
 
-{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc} <./logo.png>] (out/main.toc
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 5.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc} <./logo.png>] (out/main
+.toc
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line
+ 5.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 5.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line
+ 5.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 5.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line
+ 5.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 5.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
+ 5.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 5
+.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
@@ -884,12 +1017,15 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-) (/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.30 ... Condizioni di Test}{22}{subsection.3.3.1}
@@ -902,13 +1038,14 @@ l.30 ... Condizioni di Test}{22}{subsection.3.3.1}
  [2]
 \openout2 = `introduzione.aux'.
 
- (./introduzione.tex
-<immagini/lastofus.jpg, id=247, 1302.89577pt x 732.87888pt>
+
+(./introduzione.tex
+<immagini/lastofus.jpg, id=253, 1302.89577pt x 732.87888pt>
 File: immagini/lastofus.jpg Graphic file (type jpg)
 <use immagini/lastofus.jpg>
 Package pdftex.def Info: immagini/lastofus.jpg  used on input line 9.
 (pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
-<immagini/rdr2.jpg, id=248, 1492.0258pt x 839.26451pt>
+<immagini/rdr2.jpg, id=254, 1492.0258pt x 839.26451pt>
 File: immagini/rdr2.jpg Graphic file (type jpg)
 <use immagini/rdr2.jpg>
 Package pdftex.def Info: immagini/rdr2.jpg  used on input line 15.
@@ -919,14 +1056,15 @@ Package pdftex.def Info: immagini/rdr2.jpg  used on input line 15.
  <./immagini/lastofus.jpg> <./immagini/rdr2.jpg>]
 \openout2 = `capitolo1.aux'.
 
- (./capitolo1.tex
+
+(./capitolo1.tex
 Capitolo 1.
-<immagini/map_urban.png, id=256, 1927.2pt x 1084.05pt>
+<immagini/map_urban.png, id=262, 1927.2pt x 1084.05pt>
 File: immagini/map_urban.png Graphic file (type png)
 <use immagini/map_urban.png>
 Package pdftex.def Info: immagini/map_urban.png  used on input line 11.
 (pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
-<immagini/map_chemical.png, id=257, 1927.2pt x 1084.05pt>
+<immagini/map_chemical.png, id=263, 1927.2pt x 1084.05pt>
 File: immagini/map_chemical.png Graphic file (type png)
 <use immagini/map_chemical.png>
 Package pdftex.def Info: immagini/map_chemical.png  used on input line 16.
@@ -942,13 +1080,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 34.
- (/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+4.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [5{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}]) [6]
+) [5{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.en
+c}]) [6]
 \openout2 = `capitolo2.aux'.
 
- (./capitolo2.tex
+
+(./capitolo2.tex
 Capitolo 2.
 [7
 
@@ -957,38 +1099,44 @@ Capitolo 2.
 
 
 ] [8] [9]
-<immagini/cap2/unity_static_flag.png, id=287, 405.515pt x 373.395pt>
+<immagini/cap2/unity_static_flag.png, id=296, 405.515pt x 373.395pt>
 File: immagini/cap2/unity_static_flag.png Graphic file (type png)
 <use immagini/cap2/unity_static_flag.png>
-Package pdftex.def Info: immagini/cap2/unity_static_flag.png  used on input line 64.
+Package pdftex.def Info: immagini/cap2/unity_static_flag.png  used on input lin
+e 64.
 (pdftex.def)             Requested size: 214.67604pt x 197.6762pt.
  [10]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 71.
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 71.
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 73.
  [11 <./immagini/cap2/unity_static_flag.png>]
-<immagini/cap2/gpu_instancing_flag.png, id=313, 391.4625pt x 98.3675pt>
+<immagini/cap2/gpu_instancing_flag.png, id=324, 391.4625pt x 98.3675pt>
 File: immagini/cap2/gpu_instancing_flag.png Graphic file (type png)
 <use immagini/cap2/gpu_instancing_flag.png>
-Package pdftex.def Info: immagini/cap2/gpu_instancing_flag.png  used on input line 96.
+Package pdftex.def Info: immagini/cap2/gpu_instancing_flag.png  used on input l
+ine 96.
 (pdftex.def)             Requested size: 300.54515pt x 75.52554pt.
  [12 <./immagini/cap2/gpu_instancing_flag.png>]
-<immagini/cap2/SROShaderPass.png, id=331, 963.6pt x 722.7pt>
+<immagini/cap2/SROShaderPass.png, id=348, 963.6pt x 722.7pt>
 File: immagini/cap2/SROShaderPass.png Graphic file (type png)
 <use immagini/cap2/SROShaderPass.png>
-Package pdftex.def Info: immagini/cap2/SROShaderPass.png  used on input line 126.
+Package pdftex.def Info: immagini/cap2/SROShaderPass.png  used on input line 12
+6.
 (pdftex.def)             Requested size: 364.95189pt x 273.71356pt.
- [13 <./immagini/cap2/SROShaderPass.png>]
-<immagini/cap2/SRP_Batcher_loop.png, id=343, 1025.8325pt x 498.86375pt>
+<immagini/cap2/SRP_Batcher_loop.png, id=350, 1025.8325pt x 498.86375pt>
 File: immagini/cap2/SRP_Batcher_loop.png Graphic file (type png)
 <use immagini/cap2/SRP_Batcher_loop.png>
-Package pdftex.def Info: immagini/cap2/SRP_Batcher_loop.png  used on input line 135.
+Package pdftex.def Info: immagini/cap2/SRP_Batcher_loop.png  used on input line
+ 135.
 (pdftex.def)             Requested size: 386.41426pt x 187.91077pt.
- [14 <./immagini/cap2/SRP_Batcher_loop.png>]
-<immagini/cap2/shaders_pipeline.png, id=350, 1802.735pt x 1043.9pt>
+ [13 <./immagini/cap2/SROShaderPass.png>] [14 <./immagini/cap2/SRP_Batcher_loop
+.png>]
+<immagini/cap2/shaders_pipeline.png, id=364, 1802.735pt x 1043.9pt>
 File: immagini/cap2/shaders_pipeline.png Graphic file (type png)
 <use immagini/cap2/shaders_pipeline.png>
-Package pdftex.def Info: immagini/cap2/shaders_pipeline.png  used on input line 156.
+Package pdftex.def Info: immagini/cap2/shaders_pipeline.png  used on input line
+ 156.
 (pdftex.def)             Requested size: 429.3521pt x 248.61375pt.
  [15 <./immagini/cap2/shaders_pipeline.png>]) [16]
 \openout2 = `capitolo3.aux'.
@@ -1002,40 +1150,51 @@ Capitolo 3.
 
 
 ]
-<immagini/cap3/chemical_plant_outdoor.png, id=364, 1927.2pt x 1084.05pt>
+<immagini/cap3/chemical_plant_outdoor.png, id=378, 1927.2pt x 1084.05pt>
 File: immagini/cap3/chemical_plant_outdoor.png Graphic file (type png)
 <use immagini/cap3/chemical_plant_outdoor.png>
-Package pdftex.def Info: immagini/cap3/chemical_plant_outdoor.png  used on input line 23.
+Package pdftex.def Info: immagini/cap3/chemical_plant_outdoor.png  used on inpu
+t line 23.
 (pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
-<immagini/cap3/chemical_plant_indoor.png, id=365, 1927.2pt x 1084.05pt>
+<immagini/cap3/chemical_plant_indoor.png, id=379, 1927.2pt x 1084.05pt>
 File: immagini/cap3/chemical_plant_indoor.png Graphic file (type png)
 <use immagini/cap3/chemical_plant_indoor.png>
-Package pdftex.def Info: immagini/cap3/chemical_plant_indoor.png  used on input line 29.
+Package pdftex.def Info: immagini/cap3/chemical_plant_indoor.png  used on input
+ line 29.
 (pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
- [18 <./immagini/cap3/chemical_plant_outdoor.png> <./immagini/cap3/chemical_plant_indoor.png>]
-<immagini/cap3/unity_profiler_structure.png, id=374, 1517.67pt x 807.015pt>
+ [18 <./immagini/cap3/chemical_plant_outdoor.png> <./immagini/cap3/chemical_pla
+nt_indoor.png>]
+<immagini/cap3/unity_profiler_structure.png, id=390, 1517.67pt x 807.015pt>
 File: immagini/cap3/unity_profiler_structure.png Graphic file (type png)
 <use immagini/cap3/unity_profiler_structure.png>
-Package pdftex.def Info: immagini/cap3/unity_profiler_structure.png  used on input line 55.
+Package pdftex.def Info: immagini/cap3/unity_profiler_structure.png  used on in
+put line 55.
 (pdftex.def)             Requested size: 429.3521pt x 228.30232pt.
- [19 <./immagini/cap3/unity_profiler_structure.png>] [20]
-<immagini/cap3/frame_debugger.png, id=385, 1515.6625pt x 812.03375pt>
+ [19 <./immagini/cap3/unity_profiler_structure.png>]
+[20]
+<immagini/cap3/frame_debugger.png, id=403, 1515.6625pt x 812.03375pt>
 File: immagini/cap3/frame_debugger.png Graphic file (type png)
 <use immagini/cap3/frame_debugger.png>
-Package pdftex.def Info: immagini/cap3/frame_debugger.png  used on input line 89.
+Package pdftex.def Info: immagini/cap3/frame_debugger.png  used on input line 8
+9.
 (pdftex.def)             Requested size: 429.3521pt x 230.01949pt.
  [21 <./immagini/cap3/frame_debugger.png>] [22]
-<immagini/cap3/profiler_rendering_baseline.png, id=396, 296.10625pt x 131.49126pt>
+<immagini/cap3/profiler_rendering_baseline.png, id=414, 296.10625pt x 131.49126
+pt>
 File: immagini/cap3/profiler_rendering_baseline.png Graphic file (type png)
 <use immagini/cap3/profiler_rendering_baseline.png>
-Package pdftex.def Info: immagini/cap3/profiler_rendering_baseline.png  used on input line 125.
+Package pdftex.def Info: immagini/cap3/profiler_rendering_baseline.png  used on
+ input line 125.
 (pdftex.def)             Requested size: 386.41426pt x 171.60071pt.
-<immagini/cap3/profiler_timeline_baseline.png, id=398, 1489.565pt x 281.05pt>
+<immagini/cap3/profiler_timeline_baseline.png, id=416, 1489.565pt x 281.05pt>
 File: immagini/cap3/profiler_timeline_baseline.png Graphic file (type png)
 <use immagini/cap3/profiler_timeline_baseline.png>
-Package pdftex.def Info: immagini/cap3/profiler_timeline_baseline.png  used on input line 136.
+Package pdftex.def Info: immagini/cap3/profiler_timeline_baseline.png  used on 
+input line 136.
 (pdftex.def)             Requested size: 429.3521pt x 81.00923pt.
- [23 <./immagini/cap3/profiler_rendering_baseline.png> <./immagini/cap3/profiler_timeline_baseline.png>]) [24] [25]
+ [23 <./immagini/cap3/profiler_rendering_baseline.png> <./immagini/cap3/profile
+r_timeline_baseline.png>])
+[24] [25]
 \openout2 = `capitolo4.aux'.
 
  (./capitolo4.tex
@@ -1047,109 +1206,190 @@ Capitolo 4.
 
 
 ]
-<immagini/cap4/profiler_post_bake.png, id=421, 1507.6325pt x 478.78876pt>
+<immagini/cap4/profiler_post_bake.png, id=442, 1507.6325pt x 478.78876pt>
 File: immagini/cap4/profiler_post_bake.png Graphic file (type png)
 <use immagini/cap4/profiler_post_bake.png>
-Package pdftex.def Info: immagini/cap4/profiler_post_bake.png  used on input line 23.
+Package pdftex.def Info: immagini/cap4/profiler_post_bake.png  used on input li
+ne 23.
 (pdftex.def)             Requested size: 429.3521pt x 136.34662pt.
  [27 <./immagini/cap4/profiler_post_bake.png>]
-<immagini/cap4/classifica_mesh_console.png, id=429, 935.495pt x 273.02pt>
+<immagini/cap4/classifica_mesh_console.png, id=450, 935.495pt x 273.02pt>
 File: immagini/cap4/classifica_mesh_console.png Graphic file (type png)
 <use immagini/cap4/classifica_mesh_console.png>
-Package pdftex.def Info: immagini/cap4/classifica_mesh_console.png  used on input line 51.
+Package pdftex.def Info: immagini/cap4/classifica_mesh_console.png  used on inp
+ut line 51.
 (pdftex.def)             Requested size: 343.48299pt x 100.24512pt.
  [28] [29 <./immagini/cap4/classifica_mesh_console.png>]
-<immagini/cap4/hierarchy_road_monolitica.png, id=443, 427.5975pt x 111.41624pt>
+<immagini/cap4/hierarchy_road_monolitica.png, id=463, 427.5975pt x 111.41624pt>
+
 File: immagini/cap4/hierarchy_road_monolitica.png Graphic file (type png)
 <use immagini/cap4/hierarchy_road_monolitica.png>
-Package pdftex.def Info: immagini/cap4/hierarchy_road_monolitica.png  used on input line 92.
+Package pdftex.def Info: immagini/cap4/hierarchy_road_monolitica.png  used on i
+nput line 92.
 (pdftex.def)             Requested size: 193.20712pt x 50.34254pt.
-<immagini/cap4/hierarchy_road_split.png, id=444, 425.59pt x 401.5pt>
+<immagini/cap4/hierarchy_road_split.png, id=464, 425.59pt x 401.5pt>
 File: immagini/cap4/hierarchy_road_split.png Graphic file (type png)
 <use immagini/cap4/hierarchy_road_split.png>
-Package pdftex.def Info: immagini/cap4/hierarchy_road_split.png  used on input line 97.
+Package pdftex.def Info: immagini/cap4/hierarchy_road_split.png  used on input 
+line 97.
 (pdftex.def)             Requested size: 193.20712pt x 182.27231pt.
  [30]
-<immagini/cap4/profiler_original_road.png, id=452, 2569.6pt x 713.66624pt>
+<immagini/cap4/profiler_original_road.png, id=472, 2569.6pt x 713.66624pt>
 File: immagini/cap4/profiler_original_road.png Graphic file (type png)
 <use immagini/cap4/profiler_original_road.png>
-Package pdftex.def Info: immagini/cap4/profiler_original_road.png  used on input line 111.
+Package pdftex.def Info: immagini/cap4/profiler_original_road.png  used on inpu
+t line 111.
 (pdftex.def)             Requested size: 386.41426pt x 107.31755pt.
-<immagini/cap4/profiler_splitted_road.png, id=453, 2569.6pt x 712.6625pt>
+<immagini/cap4/profiler_splitted_road.png, id=473, 2569.6pt x 712.6625pt>
 File: immagini/cap4/profiler_splitted_road.png Graphic file (type png)
 <use immagini/cap4/profiler_splitted_road.png>
-Package pdftex.def Info: immagini/cap4/profiler_splitted_road.png  used on input line 116.
+Package pdftex.def Info: immagini/cap4/profiler_splitted_road.png  used on inpu
+t line 116.
 (pdftex.def)             Requested size: 386.41426pt x 107.16661pt.
- [31 <./immagini/cap4/hierarchy_road_monolitica.png> <./immagini/cap4/hierarchy_road_split.png>] [32 <./immagini/cap4/profiler_original_road.png> <./immagini/cap4/profiler_splitted_road.png>]
-<immagini/cap4/memory_profiler_baseline.png, id=472, 1484.54625pt x 638.385pt>
+ [31 <./immagini/cap4/hierarchy_road_monolitica.png> <./immagini/cap4/hierarchy
+_road_split.png>] [32 <./immagini/cap4/profiler_original_road.png> <./immagini/
+cap4/profiler_splitted_road.png>]
+<immagini/cap4/memory_profiler_baseline.png, id=492, 1484.54625pt x 638.385pt>
 File: immagini/cap4/memory_profiler_baseline.png Graphic file (type png)
 <use immagini/cap4/memory_profiler_baseline.png>
-Package pdftex.def Info: immagini/cap4/memory_profiler_baseline.png  used on input line 139.
+Package pdftex.def Info: immagini/cap4/memory_profiler_baseline.png  used on in
+put line 139.
 (pdftex.def)             Requested size: 386.41426pt x 166.16125pt.
  [33] [34 <./immagini/cap4/memory_profiler_baseline.png>]
-<immagini/cap4/gameplay_area.png, id=484, 994.71625pt x 718.685pt>
+<immagini/cap4/gameplay_area.png, id=505, 994.71625pt x 718.685pt>
 File: immagini/cap4/gameplay_area.png Graphic file (type png)
 <use immagini/cap4/gameplay_area.png>
-Package pdftex.def Info: immagini/cap4/gameplay_area.png  used on input line 164.
+Package pdftex.def Info: immagini/cap4/gameplay_area.png  used on input line 16
+4.
 (pdftex.def)             Requested size: 386.41426pt x 279.18939pt.
- [35 <./immagini/cap4/gameplay_area.png>] [36] [37] [38] [39] [40] [41] [42]
-Overfull \hbox (37.67258pt too wide) in paragraph at lines 352--353
-[]\T1/ptm/b/n/12 (-20) Isolamento e Di-sat-ti-va-zio-ne GI: \T1/ptm/m/n/12 (-20) Vie-ne estrat-to l'ul-ti-mo li-vel-lo del-la ca-te-na ([][]
+ [35 <./immagini/cap4/gameplay_area.png>] [36] [37] [38] [39]
+Overfull \hbox (31.93744pt too wide) in paragraph at lines 351--352
+[]\T1/ptm/b/n/12 (-20) Isolamento e Di-sat-ti-va-zio-ne GI: \T1/ptm/m/n/12 (-20
+) Vie-ne estrat-to l'ul-ti-mo li-vel-lo del-la ca-te-na ([][]
  []
 
-<immagini/cap4/memory_profiler_optimized.png, id=668, 1376.14125pt x 627.34375pt>
+[40]
+<immagini/cap4/memory_profiler_optimized.png, id=682, 1376.14125pt x 627.34375p
+t>
 File: immagini/cap4/memory_profiler_optimized.png Graphic file (type png)
 <use immagini/cap4/memory_profiler_optimized.png>
-Package pdftex.def Info: immagini/cap4/memory_profiler_optimized.png  used on input line 367.
+Package pdftex.def Info: immagini/cap4/memory_profiler_optimized.png  used on i
+nput line 366.
 (pdftex.def)             Requested size: 386.41426pt x 176.15282pt.
-[43]) [44 <./immagini/cap4/memory_profiler_optimized.png>]
+ [41 <./immagini/cap4/memory_profiler_optimized.png>]) [42]
 \openout2 = `capitolo5.aux'.
 
- (./capitolo5.tex
+
+(./capitolo5.tex
 Capitolo 5.
-) [45
+File: immagini/cap3/profiler_timeline_baseline.png Graphic file (type png)
+<use immagini/cap3/profiler_timeline_baseline.png>
+Package pdftex.def Info: immagini/cap3/profiler_timeline_baseline.png  used on 
+input line 9.
+(pdftex.def)             Requested size: 429.3521pt x 81.00923pt.
+<immagini/cap5/profiler_timeline_optimized.png, id=700, 1517.67pt x 280.04625pt
+>
+File: immagini/cap5/profiler_timeline_optimized.png Graphic file (type png)
+<use immagini/cap5/profiler_timeline_optimized.png>
+Package pdftex.def Info: immagini/cap5/profiler_timeline_optimized.png  used on
+ input line 16.
+(pdftex.def)             Requested size: 429.3521pt x 79.2243pt.
+[43
 
 
 
 
 
-]
-\openout2 = `conclusioni.aux'.
+ <./immagini/cap5/profiler_timeline_optimized.png>]
+Overfull \hbox (36.96962pt too wide) in paragraph at lines 28--29
+[]\T1/ptm/b/n/12 (-20) Efficienza del Ren-der Loop: \T1/ptm/m/n/12 (-20) Al-l'i
+n-ter-no del Ren-der Th-read, la fun-zio-ne [][]
+ []
 
- (./conclusioni.tex) [46
+File: immagini/cap4/memory_profiler_baseline.png Graphic file (type png)
+<use immagini/cap4/memory_profiler_baseline.png>
+Package pdftex.def Info: immagini/cap4/memory_profiler_baseline.png  used on in
+put line 35.
+(pdftex.def)             Requested size: 386.41426pt x 166.16125pt.
+File: immagini/cap4/memory_profiler_optimized.png Graphic file (type png)
+<use immagini/cap4/memory_profiler_optimized.png>
+Package pdftex.def Info: immagini/cap4/memory_profiler_optimized.png  used on i
+nput line 42.
+(pdftex.def)             Requested size: 386.41426pt x 176.15282pt.
+[44]
+Overfull \hbox (6.15985pt too wide) in paragraph at lines 53--63
+ [][] 
+ []
+
+[45]
+<immagini/cap5/map_chemical_2.png, id=721, 1927.2pt x 1084.05pt>
+File: immagini/cap5/map_chemical_2.png Graphic file (type png)
+<use immagini/cap5/map_chemical_2.png>
+Package pdftex.def Info: immagini/cap5/map_chemical_2.png  used on input line 7
+8.
+(pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
+<immagini/cap5/map_chemical_1.png, id=722, 1927.2pt x 1084.05pt>
+File: immagini/cap5/map_chemical_1.png Graphic file (type png)
+<use immagini/cap5/map_chemical_1.png>
+Package pdftex.def Info: immagini/cap5/map_chemical_1.png  used on input line 8
+2.
+(pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
+<immagini/cap5/M1911-reload-chemical.png, id=723, 1517.67pt x 948.54375pt>
+File: immagini/cap5/M1911-reload-chemical.png Graphic file (type png)
+<use immagini/cap5/M1911-reload-chemical.png>
+Package pdftex.def Info: immagini/cap5/M1911-reload-chemical.png  used on input
+ line 90.
+(pdftex.def)             Requested size: 206.08716pt x 128.8005pt.
+<immagini/cap5/SR18-idle-chemical.png, id=724, 1517.67pt x 948.54375pt>
+File: immagini/cap5/SR18-idle-chemical.png Graphic file (type png)
+<use immagini/cap5/SR18-idle-chemical.png>
+Package pdftex.def Info: immagini/cap5/SR18-idle-chemical.png  used on input li
+ne 94.
+(pdftex.def)             Requested size: 206.08716pt x 128.8005pt.
+) [46 <./immagini/cap5/map_chemical_2.png> <./immagini/cap5/map_chemical_1.png>
+ <./immagini/cap5/M1911-reload-chemical.png> <./immagini/cap5/SR18-idle-chemica
+l.png>] [47
 
 
 
 
-
-]
-
-LaTeX Warning: Empty bibliography on input line 174.
-
-(out/main.aux (out/introduzione.aux) (out/capitolo1.aux) (out/capitolo2.aux) (out/capitolo3.aux) (out/capitolo4.aux) (out/capitolo5.aux) (out/conclusioni.aux))
+] (out/main.aux (out/introduzione.aux) (out/capitolo1.aux)
+(out/capitolo2.aux) (out/capitolo3.aux) (out/capitolo4.aux) (out/capitolo5.aux)
+)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7B2564D9DB587A3F9978E0504BDDF46A;8717.
+(rerunfilecheck)             Checksum: 8873FDA6F1A9972974A0FADC18B9D858;8944.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28658 strings out of 467525
- 514907 string characters out of 5418983
- 1551244 words of memory out of 5000000
- 56496 multiletter control sequences out of 15000+600000
- 698395 words of font info for 354 fonts, out of 8000000 for 9000
+ 28968 strings out of 467525
+ 522160 string characters out of 5418983
+ 1613877 words of memory out of 5000000
+ 56771 multiletter control sequences out of 15000+600000
+ 704774 words of font info for 370 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,20n,121p,1223b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfit1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on out/main.pdf (47 pages, 21116282 bytes).
+ 123i,20n,121p,1193b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></
+usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb></us
+r/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/
+local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texl
+ive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/t
+exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on out/main.pdf (48 pages, 42861089 bytes).
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
- 681 compressed objects within 7 object streams
- 293 named destinations out of 1000 (max. 500000)
- 71142 words of extra memory for PDF output out of 74296 (max. 10000000)
+ 855 PDF objects out of 1000 (max. 8388607)
+ 729 compressed objects within 8 object streams
+ 311 named destinations out of 1000 (max. 500000)
+ 75271 words of extra memory for PDF output out of 89155 (max. 10000000)
 

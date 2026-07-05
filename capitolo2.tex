@@ -2,7 +2,7 @@
 
 \section{Introduzione a HDRP}
 
-La \textit{High Definition Render Pipeline} (HDRP) rappresenta l'approccio moderno di Unity per la gestione del rendering ad alta fedeltà, progettato specificamente per piattaforme hardware di fascia alta. A differenza della precedente \textit{Built-in Render Pipeline}, la HDRP non è un sistema statico, ma costituisce un'implementazione avanzata della \textit{Scriptable Render Pipeline} (SRP). 
+La \textit{High Definition Render Pipeline} (HDRP) rappresenta l'approccio moderno di Unity per la gestione del rendering ad alta fedeltà, progettato specificamente per piattaforme hardware di fascia alta \cite{UnityHDRP}. A differenza della precedente \textit{Built-in Render Pipeline}, la HDRP non è un sistema statico, ma costituisce un'implementazione avanzata della \textit{Scriptable Render Pipeline} (SRP). 
 
 L'architettura SRP introduce un cambio di paradigma fondamentale: il loop di rendering non è più codificato rigidamente all'interno del motore grafico, ma viene esposto tramite un'API C\#. Questo permette agli sviluppatori di estendere, modificare e ottimizzare il processo di disegno dei fotogrammi in base alle esigenze specifiche del progetto, un requisito essenziale per un lavoro di ottimizzazione mirato come quello richiesto da ARES.
 
@@ -53,7 +53,7 @@ Unity offre diverse strategie di \textit{batching} per far fronte all'ottimizzaz
 
 \subsection{Static Batching}
 
-Dal punto di vista tecnico, lo \textit{static batching} agisce durante la fase di inizializzazione o di caricamento della scena. Il motore grafico analizza la geometria di tutti gli oggetti idonei e ne trasforma i vertici dalle rispettive coordinate locali (\textit{local space}) in un sistema di coordinate globale (\textit{world space}). Una volta ricalcolati, questi dati vengono concatenati in un unico, grande \textit{Vertex Buffer} e un relativo \textit{Index Buffer}. In questo modo, la CPU non deve più inviare istruzioni per ogni singolo oggetto, ma può istruire la GPU a renderizzare l'intero blocco di dati con un unico comando di disegno.
+Dal punto di vista tecnico, lo \textit{static batching} agisce durante la fase di inizializzazione o di caricamento della scena. Il motore grafico analizza la geometria di tutti gli oggetti idonei e ne trasforma i vertici dalle rispettive coordinate locali (\textit{local space}) in un sistema di coordinate globale (\textit{world space}). Una volta ricalcolati, questi dati vengono concatenati in un unico, grande \textit{Vertex Buffer} e un relativo \textit{Index Buffer}. In questo modo, la CPU non deve più inviare istruzioni per ogni singolo oggetto, ma può istruire la GPU a renderizzare l'intero blocco di dati con un unico comando di disegno \cite{UnityStaticBatching}.
 
 Sebbene questa tecnica garantisca un incremento notevole del \textit{frame rate} riducendo il carico sul processore, comporta un costo in termini di memoria RAM e VRAM superiore rispetto ad altre tecniche: poiché il motore deve memorizzare la nuova \textit{mesh} combinata oltre a quelle originali, l'occupazione di memoria cresce proporzionalmente alla complessità degli oggetti raggruppati.
 
@@ -85,7 +85,7 @@ for each Material M in Scene:
 
 \subsection{GPU Instancing} 
 
-È la tecnica principale per renderizzare molteplici copie dello stesso modello geometrico utilizzando un set di dati condiviso. A differenza del \textit{static batching}, questa tecnica non genera una nuova \textit{mesh} combinata; il motore invia alla GPU un'unica copia dei dati geometrici (vertici e indici) insieme a un \textit{array} di dati variabili, definiti \textit{per-instance data} (come matrici di trasformazione o variazioni di colore).
+È la tecnica principale per renderizzare molteplici copie dello stesso modello geometrico utilizzando un set di dati condiviso. A differenza del \textit{static batching}, questa tecnica non genera una nuova \textit{mesh} combinata; il motore invia alla GPU un'unica copia dei dati geometrici (vertici e indici) insieme a un \textit{array} di dati variabili, definiti \textit{per-instance data} (come matrici di trasformazione o variazioni di colore) \cite{UnityGPUInstancing}.
 
 La GPU è quindi in grado di eseguire un ciclo di rendering interno estremamente efficiente, disegnando l'oggetto $N$ volte con una singola \textit{draw call}.
 
@@ -117,7 +117,7 @@ GPU.DrawInstanced(OriginalMesh, N)
 \end{lstlisting}
     
 \subsection{SRP Batcher} 
-Rappresenta la tecnologia di punta per l'ottimizzazione in ambiente HDRP. A differenza delle tecniche di \textit{batching} tradizionali, che mirano esclusivamente a ridurre il numero assoluto di \textit{draw call}, l'SRP Batcher si focalizza sulla riduzione dei cambiamenti di stato tra una chiamata e l'altra. Questo avviene attraverso il raggruppamento di sequenze di comandi GPU di tipo \textit{bind} e \textit{draw} in quelli che vengono definiti \textit{SRP batch}.
+Rappresenta la tecnologia di punta per l'ottimizzazione in ambiente HDRP. A differenza delle tecniche di \textit{batching} tradizionali, che mirano esclusivamente a ridurre il numero assoluto di \textit{draw call}, l'SRP Batcher si focalizza sulla riduzione dei cambiamenti di stato tra una chiamata e l'altra. Questo avviene attraverso il raggruppamento di sequenze di comandi GPU di tipo \textit{bind} e \textit{draw} in quelli che vengono definiti \textit{SRP batch} \cite{UnitySRPBatcher}.
     
 Il funzionamento del sistema si basa sulla persistenza dei dati dei materiali all'interno della memoria della GPU. L'SRP Batcher evita il caricamento ridondante dei dati se lo \textit{shader variant} rimane lo stesso.
     

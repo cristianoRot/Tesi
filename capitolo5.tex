@@ -1,2 +1,99 @@
 \chapter{Valutazione dei Risultati}
-\section{Analisi comparativa}
+In questo capitolo vengono analizzati i risultati complessivi ottenuti dall'intero ciclo di ottimizzazione applicato alla scena di riferimento. Attraverso un confronto diretto dei dati raccolti tramite gli strumenti di profiling prima e dopo gli interventi, viene valutato l'impatto delle soluzioni adottate, validando il raggiungimento degli obiettivi di stabilità prefissati per il progetto.
+
+\section{Analisi Comparativa in Runtime}
+L'ispezione della Timeline View del Profiler permette di mettere a confronto diretto la situazione di partenza (Figura \ref{fig:profiler_timeline_baseline}) con lo stato ottimizzato finale (Figura \ref{fig:profiler_timeline_optimized}):
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{immagini/cap3/profiler_timeline_baseline.png}
+    \caption{Timeline View del Profiler di baseline.}
+    \label{fig:profiler_timeline_baseline}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{immagini/cap5/profiler_timeline_optimized.png}
+    \caption{Timeline View a seguito dell'ottimizzazione.}
+    \label{fig:profiler_timeline_optimized}
+\end{figure}
+
+Dall'analisi comparativa dei due Profiler emergono i seguenti punti chiave del guadagno prestazionale:
+
+\begin{itemize}
+    \item \textbf{Abbattimento del Frame Time:} Il tempo totale richiesto dalla CPU per completare un singolo fotogramma è sceso dai \textbf{32.59 ms} della baseline a soli \textbf{23.87 ms}. In termini di fluidità percepita, questo incremento temporale permette al motore di superare la barriera instabile dei 30 FPS e di ancorarsi ai \textbf{60 FPS stabili}, azzerando i fenomeni di micro-stuttering legati ai picchi di calcolo.
+    
+    \item \textbf{Risoluzione dello Stallo del Main Thread:} Nella baseline, il processore principale rimaneva bloccato nel \lstinline|Semaphore.WaitForSignal| per ben \textbf{17.00 ms} a causa della saturazione del Render Thread, impossibilitato a gestire la comunicazione di oltre 11.000 batch. Nella configurazione ottimizzata, questo tempo di attesa è crollato a soli \textbf{5.53 ms}, indicando che il Main Thread e il Render Thread scorrono ora in perfetta sincronia.
+    
+    \item \textbf{Efficienza del Render Loop:} All'interno del Render Thread, la funzione \lstinline|ExecuteRenderGraph| ha beneficiato direttamente della riduzione del carico poligonale e del baking delle luci statiche riducendo drasticamente il lavoro di organizzazione dei dati grafici.
+\end{itemize}
+
+A completamento dell'analisi e per tracciare un quadro riassuntivo dell'intero intervento, viene riproposto il confronto visivo tra gli snapshot del \textit{Unity Memory Profiler} raccolti prima dell'ottimizzazione (Figura \ref{fig:memory_profiler_baseline}) e al termine della ristrutturazione dello scenario (Figura \ref{fig:memory_profiler_optimized}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{immagini/cap4/memory_profiler_baseline.png}
+    \caption{Memory Profiler di baseline.}
+    \label{fig:memory_profiler_baseline}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{immagini/cap4/memory_profiler_optimized.png}
+    \caption{Memory Profiler ottimizzato.}
+    \label{fig:memory_profiler_optimized}
+\end{figure}
+
+I valori sono riassunti nella Tabella \ref{tab:final_memory_comparison}:
+
+\begin{table}[H]
+    \centering
+    \caption{Allocazione di memoria prima e dopo le ottimizzazioni.}
+    \label{tab:final_memory_comparison}
+    \begin{tabular}{l|c|c|c}
+        \hline
+        \textbf{Categoria di Risorsa} & \textbf{Baseline (GB)} & \textbf{Ottimizzato (GB)} & \textbf{Delta Assoluto (GB)} \\ \hline
+        \textbf{Total Allocated Memory} & 26.07                 & 13.67                     & -12.40 \\
+        \textbf{Native Memory}          & 14.98                 & 7.43                      & -7.55  \\
+        \textbf{Graphics (Estimated)}   & 8.52                  & 4.45                      & -4.07  \\ \hline
+        \textbf{Meshes}                 & 11.14                 & 5.08                      & -6.06  \\
+        \textbf{Textures}               & 3.28                  & 2.36                      & -0.92  \\
+        \textbf{Render Textures}        & 2.06                  & 1.22                      & -0.84  \\ \hline
+    \end{tabular}
+\end{table}
+
+\section{Impatto sul Gameplay}
+L'obiettivo di una ottimizzazione applicata a un titolo First-Person Shooter competitivo come \textit{Ares} è garantire un'esperienza di gioco fluida e priva di anomalie visive. Nelle simulazioni multiplayer in tempo reale, la fluidità è un requisito imprescindibile per garantire la precisione della mira e l'assenza di latenza negli input del giocatore.
+
+I risultati ottenuti a seguito degli interventi di ottimizzazione evidenziano il raggiungimento di un traguardo di straordinaria rilevanza: l'ancoraggio stabile del frame rate a \textbf{60 FPS} costanti in \textbf{Ultra Quality} lungo tutta la mappa \textit{Chemical Plant}. Riuscire a garantire una frequenza di aggiornamento così fluida su un ecosistema storicamente complesso per il gaming di fascia alta come \textbf{macOS} rappresenta un successo ingegneristico notevole, specialmente se contestualizzato all'interno di una scena di grandi dimensioni.
+
+Viene presentata la seguente griglia di rendering in Figura \ref{fig:ares_visual_validation}, la quale mostra la resa grafica in diverse condizioni di illuminazione e inquadratura durante l'esecuzione.
+
+\begin{figure}[H]
+    \centering
+    % Prima riga di immagini
+    \subfigure{
+        \includegraphics[width=0.48\textwidth]{immagini/cap5/map_chemical_2.png}
+        \label{fig:render_out_day_grid}
+    }%
+    \subfigure{
+        \includegraphics[width=0.48\textwidth]{immagini/cap5/map_chemical_1.png}
+        \label{fig:render_in_dense_grid}
+    }
+    
+    \vspace{-0.2cm} % Compensa lo spazio verticale nativo di subfigure per renderlo identico a hspace
+    
+    % Seconda riga di immagini
+    \subfigure{
+        \includegraphics[width=0.48\textwidth]{immagini/cap5/M1911-reload-chemical.png}
+        \label{fig:render_game_action_grid}
+    }%
+    \subfigure{
+        \includegraphics[width=0.48\textwidth]{immagini/cap5/SR18-idle-chemical.png}
+        \label{fig:render_out_sunset_grid}
+    }
+    \caption{Ares in esecuzione con impostazioni Ultra su macOS.}
+    \label{fig:ares_visual_validation}
+\end{figure}
+
+In conclusione, la ristrutturazione della pipeline grafica ha dimostrato come un'ottimizzazione mirata possa abbattere drasticamente i requisiti hardware di un titolo AAA senza sacrificarne la qualità visiva. \textit{Ares} si presenta così come un videogioco pienamente ottimizzato, pronto a garantire un'esperienza solida ed efficiente.

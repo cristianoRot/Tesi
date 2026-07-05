@@ -6,7 +6,7 @@ L'illuminazione rappresenta uno dei fattori di maggior carico computazionale all
 
 \subsection{Principi del Light Baking e Lighting Mixed}
 
-Il \textit{Light Baking} è il processo di pre-calcolo dell'interazione della luce con le superfici statiche della scena. I risultati di questi calcoli (ombre, intensità luminosa e \textit{Global Illumination}) vengono memorizzati in apposite texture chiamate \textit{Lightmaps}. In fase di esecuzione, il motore grafico non deve più calcolare queste interazioni in tempo reale, ma si limita a campionare le texture pre-generate.
+Il \textit{Light Baking} è il processo di pre-calcolo dell'interazione della luce con le superfici statiche della scena. I risultati di questi calcoli (ombre, intensità luminosa e \textit{Global Illumination}) vengono memorizzati in apposite texture chiamate \textit{Lightmaps}. In fase di esecuzione, il motore grafico non deve più calcolare queste interazioni in tempo reale, ma si limita a campionare le texture pre-generate \cite{UnityLightBaking}.
 
 Per il progetto \textit{Ares} è stata adottata la modalità \textbf{Mixed Lighting}, che offre un compromesso ideale tra prestazioni e fedeltà visiva:
 \begin{itemize}
@@ -181,7 +181,6 @@ Come prima soluzione è stato sviluppato uno strumento per l'ottimizzazione dell
 Il seguente codice mostra l'implementazione logica del sistema di ottimizzazione:
 
 \begin{lstlisting}[language=pseudo, caption={Pseudocodice di MeshCleaner.}]
-
 void MeshCleaner()
 {
     var allRenderers = Object.FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None);

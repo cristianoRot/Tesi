@@ -74,7 +74,7 @@
 \lstset{
     language=pseudo,
     backgroundcolor=\color{code_bg},
-    basicstyle=\color{code_text}\ttfamily\small,
+    basicstyle=\color{code_text}\ttfamily\footnotesize\linespread{0.9}\selectfont,
     keywordstyle=\color{code_keyword}\bfseries,
     commentstyle=\color{code_comment}\itshape,
     stringstyle=\color{code_string},
@@ -90,8 +90,8 @@
     tabsize=4,
     xleftmargin=10pt,       % Piccolo rientro per staccarlo dal testo
     xrightmargin=10pt,
-    aboveskip=15pt,         % Spazio prima del codice
-    belowskip=15pt          % Spazio dopo il codice
+    aboveskip=10pt,         % Spazio prima del codice
+    belowskip=10pt          % Spazio dopo il codice
 }
 
 \begin{document}
@@ -162,12 +162,6 @@
 
 % Capitolo 5: Risultati
 \include{capitolo5} % Contenuto: 5.1 Analisi comparativa
-
-\clearpage
-
-% Conclusioni
-\addcontentsline{toc}{chapter}{Conclusioni} 
-\include{conclusioni} % Crea il file conclusioni.tex
 
 \clearpage
 

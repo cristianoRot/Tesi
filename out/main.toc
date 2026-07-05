@@ -13,8 +13,8 @@
 \contentsline {subsection}{\numberline {2.3.1}Definizione}{9}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Batching in Unity}{10}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}Static Batching}{10}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}GPU Instancing}{12}{subsection.2.3.4}%
-\contentsline {subsection}{\numberline {2.3.5}SRP Batcher}{13}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.4}GPU Instancing}{11}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}SRP Batcher}{12}{subsection.2.3.5}%
 \contentsline {section}{\numberline {2.4}Shader: fondamenti teorici e linguaggio HLSL}{14}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Definizione di Shader}{14}{subsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.4.2}Classificazione degli Shader nella Pipeline Programmabile}{15}{subsection.2.4.2}%
@@ -45,11 +45,12 @@
 \contentsline {subsection}{\numberline {4.4.1}Suddivisione della Scena}{35}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}MeshCleaner}{36}{subsection.4.4.2}%
 \contentsline {subsubsection}{Pseudocodice}{36}{subsection.4.4.2}%
-\contentsline {subsubsection}{Descrizione del Codice}{39}{lstnumber.4.1.65}%
-\contentsline {subsection}{\numberline {4.4.3}LOD Stripper}{39}{subsection.4.4.3}%
-\contentsline {subsubsection}{Pseudocodice}{40}{subsection.4.4.3}%
-\contentsline {subsubsection}{Descrizione del Codice}{43}{lstnumber.4.2.71}%
-\contentsline {subsection}{\numberline {4.4.4}Analisi Comparativa dei Risultati}{43}{subsection.4.4.4}%
-\contentsline {chapter}{\numberline {5}Valutazione dei Risultati}{45}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Analisi comparativa}{45}{section.5.1}%
-\contentsline {chapter}{Conclusioni}{46}{section.5.1}%
+\contentsline {subsubsection}{Descrizione del Codice}{38}{lstnumber.4.1.64}%
+\contentsline {subsection}{\numberline {4.4.3}LOD Stripper}{38}{subsection.4.4.3}%
+\contentsline {subsubsection}{Pseudocodice}{39}{subsection.4.4.3}%
+\contentsline {subsubsection}{Descrizione del Codice}{40}{lstnumber.4.2.71}%
+\contentsline {subsection}{\numberline {4.4.4}Analisi Comparativa dei Risultati}{41}{subsection.4.4.4}%
+\contentsline {chapter}{\numberline {5}Valutazione dei Risultati}{43}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Analisi Comparativa in Runtime}{43}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Impatto sul Gameplay}{45}{section.5.2}%
+\contentsline {chapter}{Bibliografia}{47}{chapter*.30}%
