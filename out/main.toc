@@ -41,6 +41,15 @@
 \contentsline {section}{\numberline {4.3}Mesh Splitting}{29}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Scomposizione Spaziale}{30}{subsection.4.3.1}%
 \contentsline {subsection}{\numberline {4.3.2}Analisi dell'impatto su Occlusion Culling e Performance}{31}{subsection.4.3.2}%
-\contentsline {chapter}{\numberline {5}Valutazione dei Risultati}{34}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Analisi comparativa}{34}{section.5.1}%
-\contentsline {chapter}{Conclusioni}{35}{section.5.1}%
+\contentsline {section}{\numberline {4.4}Ottimizzazione della Memoria}{33}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Suddivisione della Scena}{35}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}MeshCleaner}{36}{subsection.4.4.2}%
+\contentsline {subsubsection}{Pseudocodice}{36}{subsection.4.4.2}%
+\contentsline {subsubsection}{Descrizione del Codice}{39}{lstnumber.4.1.65}%
+\contentsline {subsection}{\numberline {4.4.3}LOD Stripper}{39}{subsection.4.4.3}%
+\contentsline {subsubsection}{Pseudocodice}{40}{subsection.4.4.3}%
+\contentsline {subsubsection}{Descrizione del Codice}{43}{lstnumber.4.2.71}%
+\contentsline {subsection}{\numberline {4.4.4}Analisi Comparativa dei Risultati}{43}{subsection.4.4.4}%
+\contentsline {chapter}{\numberline {5}Valutazione dei Risultati}{45}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Analisi comparativa}{45}{section.5.1}%
+\contentsline {chapter}{Conclusioni}{46}{section.5.1}%

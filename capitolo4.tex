@@ -129,3 +129,262 @@ L'analisi dei dati evidenzia tre miglioramenti fondamentali:
 \end{itemize}
 
 In conclusione, i dati del Profiler confermano che l'intervento di modularizzazione ha rimosso con successo il principale collo di bottiglia prestazionale legato alla natura monolitica della mesh ferroviaria, permettendo al motore grafico di operare una selezione spaziale finalmente efficace. Tuttavia, l'analisi evidenzia la persistenza di un secondo collo di bottiglia critico, strettamente legato alla saturazione della memoria e ai tempi di calcolo del \textit{Main Thread}. Si sospetta che tale criticità sia riconducibile all'elevatissimo numero di oggetti presenti nella gerarchia della scena ($\sim 20.000$ asset); la CPU, sebbene sgravata dal peso geometrico della strada, rimane congestionata dall'overhead gestionale necessario per processare i controlli di visibilità, le trasformazioni e la logica di \textit{culling} per una mole così vasta di elementi indipendenti.
+
+\section{Ottimizzazione della Memoria}
+
+Sebbene l'intervento di \textit{mesh splitting} abbia snellito il collo di bottiglia sulla GPU, l'analisi delle prestazioni complessive ha rivelato una severa criticità legata alla gestione della memoria. Per identificare l'esatta distribuzione del carico sui componenti hardware, è stata eseguita una cattura approfondita tramite il \textit{Unity Memory Profiler}. I dati emersi dalla situazione di partenza (Figura \ref{fig:memory_profiler_baseline}) hanno evidenziato un'allocazione critica, guidata principalmente dal comparto geometrico dello scenario.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{immagini/cap4/memory_profiler_baseline.png}
+    \caption{Unity Memory Profiler.}
+    \label{fig:memory_profiler_baseline}
+\end{figure}
+
+Dall'analisi sull'uso della memoria emergono tre elementi chiave:
+
+\begin{itemize}
+    \item \textbf{Native Memory:} Occupa ben \textbf{14.98 GB} allocati nello spazio nativo di Unity. Questo sottosistema gestisce direttamente gli asset grezzi del motore prima che vengano inviati alla VRAM della GPU.
+
+    \item \textbf{Meshes:} Occupano da sole \textbf{11.14 GB} di memoria nativa a fronte di sole 6.035 istanze registrate. Questo indica una densità poligonale insostenibile; anche se i sistemi di culling non renderizzano tutti i triangoli contemporaneamente, Unity è costretto a mantenere l'intera struttura geometrica residente in RAM per la fisica e le matrici di trasformazione.
+    
+    \item \textbf{Texture:} Occupano un volume significativo pari a \textbf{3.28 GB} (a cui si sommano 2.06 GB di \textit{Render Textures} per la pipeline HDRP). Sebbene rappresentino un carico secondario rispetto alle mesh, il loro peso combinato con i dati geometrici porta l'allocazione totale al limite di stabilità del sistema.
+\end{itemize}
+
+Risulta quindi fondamentale implementare una strategia di ottimizzazione per ridurre il carico.
+
+\subsection{Suddivisione della Scena}
+
+Al fine di ridurre l'insostenibile allocazione di memoria precedentemente evidenziata, si è resa necessaria un'operazione di ottimizzazione chirurgica degli asset. Un approccio uniforme su base globale avrebbe compromesso la fedeltà visiva; pertanto, è stata implementata una strategia di ottimizzazione asimmetrica guidata da criteri di prossimità spaziale e accessibilità da parte dell'utente.
+
+La scena è stata suddivisa in due macro-regioni distinte (Figura \ref{fig:gameplay_area}):
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{immagini/cap4/gameplay_area.png}
+    \caption{Suddivisione spaziale della scena.}
+    \label{fig:gameplay_area}
+\end{figure}
+
+\begin{enumerate}
+    \item \textbf{Gameplay Area (Green Zone):} Rappresenta il cuore pulsante del livello, ossia l'area di gioco calpestabile ed esplorabile dal giocatore. In questa zona, l'esigenza primaria è il mantenimento della massima qualità poligonale e della precisione delle collisioni fisiche. Di conseguenza, tutti gli oggetti e i sistemi di \textit{Level of Detail} (LOD) situati all'interno di questo perimetro sono stati mantenuti strutturalmente invariati per non alterare l'esperienza competitiva e l'accuratezza dei profili geometrici.
+    
+    \item \textbf{Background Area (Red Zone):} Comprende tutto lo scenario periferico che funge da puro sfondo visivo. Poiché il giocatore non potrà mai interagire fisicamente con questi elementi, né avvicinarsi a essi a sufficienza da percepirne i micro-dettagli, questa regione rappresenta il target ideale per interventi radicali di sfoltimento.
+\end{enumerate}
+
+\subsection{MeshCleaner}
+
+Come prima soluzione è stato sviluppato uno strumento per l'ottimizzazione della memoria tramite l'identificazione e la rimozione selettiva degli asset con un volume minore di un certa soglia situati al di fuori della zona di gioco (\textit{Red Zone}). Molti oggetti di scena secondari presentano un'elevata densità poligonale a fronte di un ingombro spaziale ridotto; quando posizionati in periferia, il loro contributo visivo è irrilevante. Mantenere tali geometrie in RAM rappresenta un collo di bottiglia inefficiente.
+
+\subsubsection{Pseudocodice}
+
+Il seguente codice mostra l'implementazione logica del sistema di ottimizzazione:
+
+\begin{lstlisting}[language=pseudo, caption={Pseudocodice di MeshCleaner.}]
+
+void MeshCleaner()
+{
+    var allRenderers = Object.FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None);
+    var matchingObjects = new List<GameObject>();
+    long totalBytesSaved = 0;
+
+    var cubeRenderer = gameplayCube.GetComponent<MeshRenderer>();
+    var greenBounds = cubeRenderer != null ? cubeRenderer.bounds : new Bounds(gameplayCube.transform.position, gameplayCube.transform.lossyScale);
+
+    var tags = keywordsToSkip.Split(',');
+    var cleanKeywords = new List<string>();
+    foreach (var tag in tags)
+    {
+        var trimmedTag = tag.Trim().ToLower();
+        if (!string.IsNullOrEmpty(trimmedTag)) cleanKeywords.Add(trimmedTag);
+    }
+
+    foreach (var renderer in allRenderers)
+    {
+        if (renderer == null || renderer.gameObject == gameplayCube || !renderer.gameObject.scene.IsValid()) continue;
+
+        if (greenBounds.Contains(renderer.bounds.center)) continue;
+
+        var objectName = renderer.gameObject.name.ToLower();
+        var shouldSkipByName = false;
+        foreach (var keyword in cleanKeywords)
+        {
+            if (objectName.Contains(keyword))
+            {
+                shouldSkipByName = true;
+                break;
+            }
+        }
+        if (shouldSkipByName) continue; 
+
+        var size = renderer.bounds.size;
+        var boundingBoxVolume = size.x * size.y * size.z;
+
+        if (boundingBoxVolume < volumeThreshold)
+        {
+            var finalTarget = renderer.gameObject;
+            if (objectName.Contains("lod") && renderer.gameObject.transform.parent != null)
+            {
+                finalTarget = renderer.gameObject.transform.parent.gameObject;
+            }
+
+            if (!matchingObjects.Contains(finalTarget))
+            {
+                matchingObjects.Add(finalTarget);
+            }
+
+            var meshFilter = renderer.GetComponent<MeshFilter>();
+            if (meshFilter != null && meshFilter.sharedMesh != null)
+            {
+                totalBytesSaved += Profiler.GetRuntimeMemorySizeLong(meshFilter.sharedMesh);
+            }
+        }
+    }
+
+    if (matchingObjects.Count > 0)
+    {
+        Selection.objects = matchingObjects.ToArray();
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Descrizione del Codice}
+
+Il funzionamento dello script si articola in quattro fasi logiche essenziali:
+
+\begin{enumerate}    
+    \item \textbf{Culling Spaziale:} Attraverso il metodo \lstinline|bounds.Contains|, ogni \textit{MeshRenderer} viene analizzato in base al centro geometrico del proprio Bounding Box. Se l'oggetto si trova all'interno della zona di gioco calpestabile, viene immediatamente saltato.
+    
+    \item \textbf{Filtro nome:} Il nome del \textit{GameObject} viene confrontato con l'array delle parole chiave di protezione (\lstinline|keywordsToSkip|). La corrispondenza parziale interrompe l'analisi dell'oggetto, impedendo la rimozione accidentale di elementi portanti o infrastrutture di sfondo estese.
+    
+    \item \textbf{Valutazione Volumetrica:} Viene calcolato il volume teorico occupato dal Bounding Box dell'asset. Se tale valore è inferiore a $volumeThreshold$, l'oggetto viene marcato per l'eliminazione
+    
+    \item \textbf{Stima della Memoria:} Per ogni mesh che soddisfa i criteri di culling, l'algoritmo interroga il \lstinline|Profiler| nativo di Unity per ricavare l'esatta allocazione in byte dell'asset su disco.
+\end{enumerate}
+
+\subsection{LOD Stripper}
+
+La seconda strategia di ottimizzazione strutturale, da me interamente progettata e sviluppata, prende il nome di \textit{LOD Stripper}. Il metodo mira a risolvere l'eccessiva occupazione di memoria nativa agendo sui componenti \textit{LODGroup} delle strutture periferiche situate nella \textit{Red Zone}. Negli scenari ad alta densità geometrica, i modelli tridimensionali distanti mantengono attive le catene gerarchiche complete (\textit{LOD0, LOD1, LOD2, ...}). Poiché tali sottomodelli non vengono mai inquadrati a distanza ravvicinata, la loro presenza in RAM risulta superflua. L'algoritmo modifica in modo radicale i gruppi di \textit{LOD}, forzando l'uso esclusivo dell'ultimo livello della catena e procedendo alla distruzione fisica degli asset intermedi inutilizzati.
+
+\subsubsection{Pseudocodice}
+
+Il codice seguente mostra lo pseudo-code che implementa la logica di eliminazione e riconfigurazione dei LOD:
+
+\begin{lstlisting}[language=pseudo, caption={Pseudo-code dello LOD Stripper.}]
+void ExecutePureLODStripping()
+{
+    var allLodGroups = Object.FindObjectsByType<LODGroup>(FindObjectsSortMode.None);
+    var optimizedCount = 0;
+    var deletedMeshesCount = 0;
+
+    var cubeRenderer = gameplayCube.GetComponent<MeshRenderer>();
+    var greenBounds = cubeRenderer != null ? cubeRenderer.bounds : new Bounds(gameplayCube.transform.position, gameplayCube.transform.lossyScale);
+
+    foreach (var lodGroup in allLodGroups)
+    {
+        if (lodGroup == null || lodGroup.gameObject == gameplayCube || !lodGroup.gameObject.scene.IsValid()) continue;
+
+        if (greenBounds.Contains(lodGroup.transform.position)) continue;
+
+        var originalLods = lodGroup.GetLODs();
+        if (originalLods.Length == 0) continue;
+
+        var lastLodIndex = originalLods.Length - 1;
+        var lightRenderers = originalLods[lastLodIndex].renderers;
+
+        if (lightRenderers == null || lightRenderers.Length == 0 || lightRenderers[0] == null) continue;
+
+        var objectsToKeep = new HashSet<GameObject>();
+        foreach (var r in lightRenderers)
+        {
+            if (r != null)
+            {
+                objectsToKeep.Add(r.gameObject);
+                GameObjectUtility.SetStaticEditorFlags(r.gameObject, 
+                    GameObjectUtility.GetStaticEditorFlags(r.gameObject) & ~StaticEditorFlags.ContributeGI);
+            }
+        }
+
+        foreach (Transform child in lodGroup.transform)
+        {
+            if (child.name.ToLower().Contains("collider"))
+            {
+                objectsToKeep.Add(child.gameObject);
+            }
+        }
+
+        var newLods = new LOD[1];
+        newLods[0] = new LOD(0.01f, lightRenderers);
+        
+        lodGroup.SetLODs(newLods);
+        lodGroup.RecalculateBounds();
+
+        var childrenToDelete = new List<GameObject>();
+        foreach (Transform child in lodGroup.transform)
+        {
+            var childGo = child.gameObject;
+            if (!objectsToKeep.Contains(childGo))
+            {
+                var nameLower = child.name.ToLower();
+                if (nameLower.Contains("lod") && !nameLower.Contains($"lod{lastLodIndex}"))
+                {
+                    childrenToDelete.Add(childGo);
+                }
+            }
+        }
+
+        foreach (var childToDelete in childrenToDelete)
+        {
+            deletedMeshesCount++;
+            Undo.DestroyObjectImmediate(childToDelete);
+        }
+
+        optimizedCount++;
+    }
+}
+\end{lstlisting}
+
+\subsubsection{Descrizione del Codice}
+
+Il funzionamento dello script si articola in quattro fasi logiche essenziali:
+
+\begin{enumerate}
+    \item \textbf{Isolamento e Disattivazione GI:} Viene estratto l'ultimo livello della catena (\lstinline|lightRenderers|), ovvero la mesh a minor impatto poligonale, e viene disattivato il flag statico \lstinline|ContributeGI| sui relativi renderer per alleggerire il calcolo della luce.
+    
+    \item \textbf{Protezione dei Componenti:} I \textit{GameObject} dell'ultimo livello e i nodi contenenti i \textit{Collider} strutturali vengono inseriti in un \lstinline|HashSet| di salvaguardia per impedirne la rimozione accidentale e prevenire errori di puntamento.
+    
+    \item \textbf{Ristrutturazione del LODGroup:} La catena multi-livello originaria viene azzerata e sostituita da un singolo stadio contenente la mesh leggera, impostando la soglia di culling visivo all'1\% (\lstinline|0.01f|).
+    
+    \item \textbf{Pulizia Gerarchica:} Lo script analizza i nodi figli ed elimina fisicamente dalla gerarchia tutti gli asset geometrici intermedi ad alto dettaglio non protetti.
+\end{enumerate}
+
+\subsection{Analisi Comparativa dei Risultati}
+
+A seguito dell'esecuzione combinata degli strumenti custom \textit{MeshCleaner} e \textit{LODStripper}, è stata eseguita una seconda cattura approfondita tramite il \textit{Unity Memory Profiler} (Figura \ref{fig:memory_profiler_optimized}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{immagini/cap4/memory_profiler_optimized.png}
+    \caption{Unity Memory Profiler a seguito degli interventi di ottimizzazione.}
+    \label{fig:memory_profiler_optimized}
+\end{figure}
+
+Per facilitare l'analisi dei dati e quantificare con precisione il guadagno prestazionale ottenuto, i valori di allocazione hardware sono stati riassunti e confrontati nella Tabella \ref{tab:memory_comparison}:
+
+\begin{table}[H]
+    \centering
+    \caption{Confronto metrico dell'allocazione di memoria prima e dopo l'ottimizzazione.}
+    \label{tab:memory_comparison}
+    \begin{tabular}{l|c|c|c}
+        \hline
+        \textbf{Categoria di Memoria} & \textbf{Baseline (GB)} & \textbf{Ottimizzato (GB)} & \textbf{\%} \\ \hline
+        \textbf{Total Allocated}       & 26.07                  & 13.67                     & -47.56\% (-12.40 GB)              \\
+        \textbf{Native Memory}         & 14.98                  & 7.43                      & -50.40\% (-7.55 GB)               \\
+        \textbf{Graphics (Estimated)}  & 8.52                   & 4.45                      & -47.77\% (-4.07 GB)               \\ \hline
+        \textbf{Meshes}                & 11.14                  & 5.08                      & -54.39\% (-6.06 GB)               \\
+        \textbf{Textures}              & 3.28                   & 2.36                      & -28.04\% (-0.92 GB)               \\
+        \textbf{Render Textures}       & 2.06                   & 1.22                      & -40.77\% (-0.84 GB)               \\ \hline
+    \end{tabular}
+\end{table}
+
+In conclusione, l'azione combinata dei due strumenti ha permesso di recuperare ben \textbf{12.40 GB} di memoria di sistema globale. Il superamento della soglia critica dei 26 GB e il riposizionamento dell'intero applicativo all'interno di un'allocazione totale di \textbf{13.67 GB} garantisce la stabilità del runtime e la piena compatibilità del titolo con le specifiche hardware target, eliminando i rischi di crash per saturazione della memoria nativa senza aver intaccato la fedeltà visiva di gioco.
