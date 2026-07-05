@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber out/main"] 1783293070.12843 "out/main.bcf" "out/main.bbl" "out/main" 1783293092.62984 0
+["biber out/main"] 1783293070.12843 "out/main.bcf" "out/main.bbl" "out/main" 1783294070.88353 0
   "bibliography.bib" 1783292993.57762 1289 9a81c64f4d38571b6ad2ef67a8d1d79c ""
-  "out/main.bcf" 1783293092.52484 109046 8cfd4eae7028bad7329c11cdaac26b87 "pdflatex"
+  "out/main.bcf" 1783294070.77399 109046 8cfd4eae7028bad7329c11cdaac26b87 "pdflatex"
   (generated)
   "out/main.bbl"
   "out/main.blg"
   (rewritten before read)
-["pdflatex"] 1783293085.73686 "main.tex" "out/main.pdf" "main" 1783293092.63011 0
+["pdflatex"] 1783294063.70928 "main.tex" "out/main.pdf" "main" 1783294070.8838 0
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -168,7 +168,7 @@
   "capitolo1.tex" 1775747466 4451 d4430df7ef1fb3331c0d2fd437d5c3c7 ""
   "capitolo2.tex" 1783293026.65535 15306 cd0f8186e293d037982237ac1a2ae140 ""
   "capitolo3.tex" 1783293043.7379 14586 713585531d21a6e196cf2bf450d4b136 ""
-  "capitolo4.tex" 1783293054.7081 27285 4b31c7cbd4acd68c55210223e6b1e6f6 ""
+  "capitolo4.tex" 1783294051.01961 27335 bbf87e3b9b2ee0887bd0467787f0813f ""
   "capitolo5.tex" 1783287298.31384 6787 18a7805458379b85e3044b7199a79b55 ""
   "immagini/cap2/SROShaderPass.png" 1775747468 90126 3d28cf02a3c3e7d1d3e2c85011fe3438 ""
   "immagini/cap2/SRP_Batcher_loop.png" 1775747470 81024 9b1fff5acb2f491eda75215311d9ef10 ""
@@ -202,17 +202,17 @@
   "introduzione.tex" 1775747466 1451 95d8c525731652c8ee3d682ef54d4531 ""
   "logo.png" 1775747466 62261 1fa258b1ad50f0a6a51a69df07122f35 ""
   "main.tex" 1783290792.26191 5057 fdb5efaaf3937013bb56187d89c901d5 ""
-  "out/capitolo1.aux" 1783293087.13131 4550 15130284e23a2e4df394ca6c0c719883 "pdflatex"
-  "out/capitolo2.aux" 1783293087.50566 8283 a75b0d6913fb19141ca5cc92ac0470f4 "pdflatex"
-  "out/capitolo3.aux" 1783293088.98456 8647 6772d4b7ddeaefe18663e9ab11d916c6 "pdflatex"
-  "out/capitolo4.aux" 1783293090.26225 10178 0d8a484c6f5b79ab9d4414fc251e5d3f "pdflatex"
-  "out/capitolo5.aux" 1783293092.49377 6975 08eb1ff3ba8646394a8fef5e4b9dfe09 "pdflatex"
-  "out/introduzione.aux" 1783293086.7561 4106 97caa325c93bae280fd5c7c1c67b0a39 "pdflatex"
-  "out/main.aux" 1783293092.51872 1825 66a56c028809efc1f0e1d96375ebe1d0 "pdflatex"
+  "out/capitolo1.aux" 1783294065.20043 4550 15130284e23a2e4df394ca6c0c719883 "pdflatex"
+  "out/capitolo2.aux" 1783294065.59255 8283 a75b0d6913fb19141ca5cc92ac0470f4 "pdflatex"
+  "out/capitolo3.aux" 1783294067.12586 8647 6772d4b7ddeaefe18663e9ab11d916c6 "pdflatex"
+  "out/capitolo4.aux" 1783294068.44491 10248 35ed75a145c0e168970695c55fa14fe5 "pdflatex"
+  "out/capitolo5.aux" 1783294070.74081 6975 08eb1ff3ba8646394a8fef5e4b9dfe09 "pdflatex"
+  "out/introduzione.aux" 1783294064.82742 4106 97caa325c93bae280fd5c7c1c67b0a39 "pdflatex"
+  "out/main.aux" 1783294070.76675 1825 66a56c028809efc1f0e1d96375ebe1d0 "pdflatex"
   "out/main.bbl" 1783293071.92335 8675 89233b1fc76b31e7810fbcb066a0d76c "biber out/main"
-  "out/main.out" 1783293092.52393 8944 8873fda6f1a9972974a0fadc18b9d858 "pdflatex"
-  "out/main.run.xml" 1783293092.52541 2307 3a074e04ed293895fa41bf436c991121 "pdflatex"
-  "out/main.toc" 1783293092.52548 4874 c4e701a9cdacfac215a4e45ec6733b8e "pdflatex"
+  "out/main.out" 1783294070.77252 8944 8873fda6f1a9972974a0fadc18b9d858 "pdflatex"
+  "out/main.run.xml" 1783294070.7747 2307 3a074e04ed293895fa41bf436c991121 "pdflatex"
+  "out/main.toc" 1783294070.77479 4874 c4e701a9cdacfac215a4e45ec6733b8e "pdflatex"
   (generated)
   "out/capitolo1.aux"
   "out/capitolo2.aux"

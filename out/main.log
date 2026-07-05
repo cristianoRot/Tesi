@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.9)  6 JUL 2026 01:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.9)  6 JUL 2026 01:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -830,14 +830,7 @@ LaTeX Font Info:    Trying to load font information for T1+ptm on input line 97
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ) (out/main.aux
 (out/introduzione.aux) (out/capitolo1.aux) (out/capitolo2.aux)
-(out/capitolo3.aux) (out/capitolo4.aux) (out/capitolo5.aux
-
-LaTeX Warning: Label `fig:memory_profiler_baseline' multiply defined.
-
-
-LaTeX Warning: Label `fig:memory_profiler_optimized' multiply defined.
-
-))
+(out/capitolo3.aux) (out/capitolo4.aux) (out/capitolo5.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
@@ -1256,7 +1249,7 @@ Package pdftex.def Info: immagini/cap4/memory_profiler_baseline.png  used on in
 put line 139.
 (pdftex.def)             Requested size: 386.41426pt x 166.16125pt.
  [33] [34 <./immagini/cap4/memory_profiler_baseline.png>]
-<immagini/cap4/gameplay_area.png, id=505, 994.71625pt x 718.685pt>
+<immagini/cap4/gameplay_area.png, id=504, 994.71625pt x 718.685pt>
 File: immagini/cap4/gameplay_area.png Graphic file (type png)
 <use immagini/cap4/gameplay_area.png>
 Package pdftex.def Info: immagini/cap4/gameplay_area.png  used on input line 16
@@ -1269,7 +1262,7 @@ Overfull \hbox (31.93744pt too wide) in paragraph at lines 351--352
  []
 
 [40]
-<immagini/cap4/memory_profiler_optimized.png, id=682, 1376.14125pt x 627.34375p
+<immagini/cap4/memory_profiler_optimized.png, id=681, 1376.14125pt x 627.34375p
 t>
 File: immagini/cap4/memory_profiler_optimized.png Graphic file (type png)
 <use immagini/cap4/memory_profiler_optimized.png>
@@ -1287,7 +1280,7 @@ File: immagini/cap3/profiler_timeline_baseline.png Graphic file (type png)
 Package pdftex.def Info: immagini/cap3/profiler_timeline_baseline.png  used on 
 input line 9.
 (pdftex.def)             Requested size: 429.3521pt x 81.00923pt.
-<immagini/cap5/profiler_timeline_optimized.png, id=700, 1517.67pt x 280.04625pt
+<immagini/cap5/profiler_timeline_optimized.png, id=698, 1517.67pt x 280.04625pt
 >
 File: immagini/cap5/profiler_timeline_optimized.png Graphic file (type png)
 <use immagini/cap5/profiler_timeline_optimized.png>
@@ -1360,10 +1353,6 @@ l.png>] [47
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 8873FDA6F1A9972974A0FADC18B9D858;8944.
 Package logreq Info: Writing requests to 'main.run.xml'.
@@ -1371,10 +1360,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28968 strings out of 467525
- 522160 string characters out of 5418983
- 1613877 words of memory out of 5000000
- 56771 multiletter control sequences out of 15000+600000
+ 28970 strings out of 467525
+ 522231 string characters out of 5418983
+ 1614023 words of memory out of 5000000
+ 56773 multiletter control sequences out of 15000+600000
  704774 words of font info for 370 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,20n,121p,1193b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1386,7 +1375,7 @@ r/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/
 local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texl
 ive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on out/main.pdf (48 pages, 42861089 bytes).
+Output written on out/main.pdf (48 pages, 42861127 bytes).
 PDF statistics:
  855 PDF objects out of 1000 (max. 8388607)
  729 compressed objects within 8 object streams

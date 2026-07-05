@@ -114,7 +114,7 @@ Il confronto diretto tra le rilevazioni del Profiler effettuate prima e dopo la 
         \includegraphics[width=0.9\textwidth]{immagini/cap4/profiler_splitted_road.png}
         \label{fig:profiler_splitted}
     }
-    \caption{Confronto delle prestazioni tramite.}
+    \caption{Confronto delle prestazioni tramite la Timeline View del Profiler.}
     \label{fig:profiler_comparison}
 \end{figure}
 
@@ -132,13 +132,13 @@ In conclusione, i dati del Profiler confermano che l'intervento di modularizzazi
 
 \section{Ottimizzazione della Memoria}
 
-Sebbene l'intervento di \textit{mesh splitting} abbia snellito il collo di bottiglia sulla GPU, l'analisi delle prestazioni complessive ha rivelato una severa criticità legata alla gestione della memoria. Per identificare l'esatta distribuzione del carico sui componenti hardware, è stata eseguita una cattura approfondita tramite il \textit{Unity Memory Profiler}. I dati emersi dalla situazione di partenza (Figura \ref{fig:memory_profiler_baseline}) hanno evidenziato un'allocazione critica, guidata principalmente dal comparto geometrico dello scenario.
+Sebbene l'intervento di \textit{mesh splitting} abbia snellito il collo di bottiglia sulla GPU, l'analisi delle prestazioni complessive ha rivelato una severa criticità legata alla gestione della memoria. Per identificare l'esatta distribuzione del carico sui componenti hardware, è stata eseguita una cattura approfondita tramite il \textit{Unity Memory Profiler}. I dati emersi dalla situazione di partenza (Figura \ref{fig:memory_profiler_baseline_cap4}) hanno evidenziato un'allocazione critica, guidata principalmente dal comparto geometrico dello scenario.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{immagini/cap4/memory_profiler_baseline.png}
     \caption{Unity Memory Profiler.}
-    \label{fig:memory_profiler_baseline}
+    \label{fig:memory_profiler_baseline_cap4}
 \end{figure}
 
 Dall'analisi sull'uso della memoria emergono tre elementi chiave:
@@ -359,13 +359,13 @@ Il funzionamento dello script si articola in quattro fasi logiche essenziali:
 
 \subsection{Analisi Comparativa dei Risultati}
 
-A seguito dell'esecuzione combinata degli strumenti custom \textit{MeshCleaner} e \textit{LODStripper}, è stata eseguita una seconda cattura approfondita tramite il \textit{Unity Memory Profiler} (Figura \ref{fig:memory_profiler_optimized}).
+A seguito dell'esecuzione combinata degli strumenti custom \textit{MeshCleaner} e \textit{LODStripper}, è stata eseguita una seconda cattura approfondita tramite il \textit{Unity Memory Profiler} (Figura \ref{fig:memory_profiler_optimized_cap4}).
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{immagini/cap4/memory_profiler_optimized.png}
     \caption{Unity Memory Profiler a seguito degli interventi di ottimizzazione.}
-    \label{fig:memory_profiler_optimized}
+    \label{fig:memory_profiler_optimized_cap4}
 \end{figure}
 
 Per facilitare l'analisi dei dati e quantificare con precisione il guadagno prestazionale ottenuto, i valori di allocazione hardware sono stati riassunti e confrontati nella Tabella \ref{tab:memory_comparison}:
