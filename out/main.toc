@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {1.2}Motivazioni e obiettivi}{5}{section.1.2}%
 \contentsline {chapter}{\numberline {2}La Pipeline di Rendering in Unity}{7}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introduzione a HDRP}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Gestione del carico computazionale}{7}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Gestione del carico computazionale}{8}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Il costo delle Draw Call}{8}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Cambiamenti di stato e SetPass Calls}{8}{subsection.2.2.2}%
 \contentsline {section}{\numberline {2.3}Batching}{9}{section.2.3}%
@@ -23,7 +23,7 @@
 \contentsline {subsection}{\numberline {3.1.1}Caratteristiche della Scena e Criticità Computazionali}{17}{subsection.3.1.1}%
 \contentsline {section}{\numberline {3.2}Strumenti di Profiling}{18}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Unity Profiler}{18}{subsection.3.2.1}%
-\contentsline {subsubsection}{Struttura e Moduli di Analisi}{18}{subsection.3.2.1}%
+\contentsline {subsubsection}{Struttura e Moduli di Analisi}{19}{subsection.3.2.1}%
 \contentsline {subsubsection}{Metriche Critiche per l'Ottimizzazione}{19}{figure.caption.12}%
 \contentsline {subsection}{\numberline {3.2.2}Frame Debugger}{20}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}Rilevazione della Baseline}{21}{section.3.3}%

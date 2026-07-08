@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.9)  6 JUL 2026 01:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.4.9)  9 JUL 2026 00:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1092,7 +1092,7 @@ Capitolo 2.
 
 
 ] [8] [9]
-<immagini/cap2/unity_static_flag.png, id=296, 405.515pt x 373.395pt>
+<immagini/cap2/unity_static_flag.png, id=308, 405.515pt x 373.395pt>
 File: immagini/cap2/unity_static_flag.png Graphic file (type png)
 <use immagini/cap2/unity_static_flag.png>
 Package pdftex.def Info: immagini/cap2/unity_static_flag.png  used on input lin
@@ -1104,20 +1104,20 @@ nput line 71.
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 73.
  [11 <./immagini/cap2/unity_static_flag.png>]
-<immagini/cap2/gpu_instancing_flag.png, id=324, 391.4625pt x 98.3675pt>
+<immagini/cap2/gpu_instancing_flag.png, id=337, 391.4625pt x 98.3675pt>
 File: immagini/cap2/gpu_instancing_flag.png Graphic file (type png)
 <use immagini/cap2/gpu_instancing_flag.png>
 Package pdftex.def Info: immagini/cap2/gpu_instancing_flag.png  used on input l
 ine 96.
 (pdftex.def)             Requested size: 300.54515pt x 75.52554pt.
  [12 <./immagini/cap2/gpu_instancing_flag.png>]
-<immagini/cap2/SROShaderPass.png, id=348, 963.6pt x 722.7pt>
+<immagini/cap2/SROShaderPass.png, id=361, 963.6pt x 722.7pt>
 File: immagini/cap2/SROShaderPass.png Graphic file (type png)
 <use immagini/cap2/SROShaderPass.png>
 Package pdftex.def Info: immagini/cap2/SROShaderPass.png  used on input line 12
 6.
 (pdftex.def)             Requested size: 364.95189pt x 273.71356pt.
-<immagini/cap2/SRP_Batcher_loop.png, id=350, 1025.8325pt x 498.86375pt>
+<immagini/cap2/SRP_Batcher_loop.png, id=363, 1025.8325pt x 498.86375pt>
 File: immagini/cap2/SRP_Batcher_loop.png Graphic file (type png)
 <use immagini/cap2/SRP_Batcher_loop.png>
 Package pdftex.def Info: immagini/cap2/SRP_Batcher_loop.png  used on input line
@@ -1125,7 +1125,7 @@ Package pdftex.def Info: immagini/cap2/SRP_Batcher_loop.png  used on input line
 (pdftex.def)             Requested size: 386.41426pt x 187.91077pt.
  [13 <./immagini/cap2/SROShaderPass.png>] [14 <./immagini/cap2/SRP_Batcher_loop
 .png>]
-<immagini/cap2/shaders_pipeline.png, id=364, 1802.735pt x 1043.9pt>
+<immagini/cap2/shaders_pipeline.png, id=382, 1802.735pt x 1043.9pt>
 File: immagini/cap2/shaders_pipeline.png Graphic file (type png)
 <use immagini/cap2/shaders_pipeline.png>
 Package pdftex.def Info: immagini/cap2/shaders_pipeline.png  used on input line
@@ -1143,13 +1143,13 @@ Capitolo 3.
 
 
 ]
-<immagini/cap3/chemical_plant_outdoor.png, id=378, 1927.2pt x 1084.05pt>
+<immagini/cap3/chemical_plant_outdoor.png, id=399, 1927.2pt x 1084.05pt>
 File: immagini/cap3/chemical_plant_outdoor.png Graphic file (type png)
 <use immagini/cap3/chemical_plant_outdoor.png>
 Package pdftex.def Info: immagini/cap3/chemical_plant_outdoor.png  used on inpu
 t line 23.
 (pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
-<immagini/cap3/chemical_plant_indoor.png, id=379, 1927.2pt x 1084.05pt>
+<immagini/cap3/chemical_plant_indoor.png, id=400, 1927.2pt x 1084.05pt>
 File: immagini/cap3/chemical_plant_indoor.png Graphic file (type png)
 <use immagini/cap3/chemical_plant_indoor.png>
 Package pdftex.def Info: immagini/cap3/chemical_plant_indoor.png  used on input
@@ -1157,7 +1157,7 @@ Package pdftex.def Info: immagini/cap3/chemical_plant_indoor.png  used on input
 (pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
  [18 <./immagini/cap3/chemical_plant_outdoor.png> <./immagini/cap3/chemical_pla
 nt_indoor.png>]
-<immagini/cap3/unity_profiler_structure.png, id=390, 1517.67pt x 807.015pt>
+<immagini/cap3/unity_profiler_structure.png, id=412, 1517.67pt x 807.015pt>
 File: immagini/cap3/unity_profiler_structure.png Graphic file (type png)
 <use immagini/cap3/unity_profiler_structure.png>
 Package pdftex.def Info: immagini/cap3/unity_profiler_structure.png  used on in
@@ -1165,29 +1165,28 @@ put line 55.
 (pdftex.def)             Requested size: 429.3521pt x 228.30232pt.
  [19 <./immagini/cap3/unity_profiler_structure.png>]
 [20]
-<immagini/cap3/frame_debugger.png, id=403, 1515.6625pt x 812.03375pt>
+<immagini/cap3/frame_debugger.png, id=425, 1515.6625pt x 812.03375pt>
 File: immagini/cap3/frame_debugger.png Graphic file (type png)
 <use immagini/cap3/frame_debugger.png>
 Package pdftex.def Info: immagini/cap3/frame_debugger.png  used on input line 8
 9.
 (pdftex.def)             Requested size: 429.3521pt x 230.01949pt.
  [21 <./immagini/cap3/frame_debugger.png>] [22]
-<immagini/cap3/profiler_rendering_baseline.png, id=414, 296.10625pt x 131.49126
+<immagini/cap3/profiler_rendering_baseline.png, id=437, 296.10625pt x 131.49126
 pt>
 File: immagini/cap3/profiler_rendering_baseline.png Graphic file (type png)
 <use immagini/cap3/profiler_rendering_baseline.png>
 Package pdftex.def Info: immagini/cap3/profiler_rendering_baseline.png  used on
  input line 125.
 (pdftex.def)             Requested size: 386.41426pt x 171.60071pt.
-<immagini/cap3/profiler_timeline_baseline.png, id=416, 1489.565pt x 281.05pt>
+<immagini/cap3/profiler_timeline_baseline.png, id=439, 1489.565pt x 281.05pt>
 File: immagini/cap3/profiler_timeline_baseline.png Graphic file (type png)
 <use immagini/cap3/profiler_timeline_baseline.png>
 Package pdftex.def Info: immagini/cap3/profiler_timeline_baseline.png  used on 
 input line 136.
 (pdftex.def)             Requested size: 429.3521pt x 81.00923pt.
- [23 <./immagini/cap3/profiler_rendering_baseline.png> <./immagini/cap3/profile
-r_timeline_baseline.png>])
-[24] [25]
+ [23 <./immagini/cap3/profiler_rendering_baseline.png>] [24 <./immagini/cap3/pr
+ofiler_timeline_baseline.png>]) [25]
 \openout2 = `capitolo4.aux'.
 
  (./capitolo4.tex
@@ -1199,41 +1198,41 @@ Capitolo 4.
 
 
 ]
-<immagini/cap4/profiler_post_bake.png, id=442, 1507.6325pt x 478.78876pt>
+<immagini/cap4/profiler_post_bake.png, id=466, 1507.6325pt x 478.78876pt>
 File: immagini/cap4/profiler_post_bake.png Graphic file (type png)
 <use immagini/cap4/profiler_post_bake.png>
 Package pdftex.def Info: immagini/cap4/profiler_post_bake.png  used on input li
 ne 23.
 (pdftex.def)             Requested size: 429.3521pt x 136.34662pt.
  [27 <./immagini/cap4/profiler_post_bake.png>]
-<immagini/cap4/classifica_mesh_console.png, id=450, 935.495pt x 273.02pt>
+<immagini/cap4/classifica_mesh_console.png, id=474, 935.495pt x 273.02pt>
 File: immagini/cap4/classifica_mesh_console.png Graphic file (type png)
 <use immagini/cap4/classifica_mesh_console.png>
 Package pdftex.def Info: immagini/cap4/classifica_mesh_console.png  used on inp
 ut line 51.
 (pdftex.def)             Requested size: 343.48299pt x 100.24512pt.
  [28] [29 <./immagini/cap4/classifica_mesh_console.png>]
-<immagini/cap4/hierarchy_road_monolitica.png, id=463, 427.5975pt x 111.41624pt>
+<immagini/cap4/hierarchy_road_monolitica.png, id=487, 427.5975pt x 111.41624pt>
 
 File: immagini/cap4/hierarchy_road_monolitica.png Graphic file (type png)
 <use immagini/cap4/hierarchy_road_monolitica.png>
 Package pdftex.def Info: immagini/cap4/hierarchy_road_monolitica.png  used on i
 nput line 92.
 (pdftex.def)             Requested size: 193.20712pt x 50.34254pt.
-<immagini/cap4/hierarchy_road_split.png, id=464, 425.59pt x 401.5pt>
+<immagini/cap4/hierarchy_road_split.png, id=488, 425.59pt x 401.5pt>
 File: immagini/cap4/hierarchy_road_split.png Graphic file (type png)
 <use immagini/cap4/hierarchy_road_split.png>
 Package pdftex.def Info: immagini/cap4/hierarchy_road_split.png  used on input 
 line 97.
 (pdftex.def)             Requested size: 193.20712pt x 182.27231pt.
  [30]
-<immagini/cap4/profiler_original_road.png, id=472, 2569.6pt x 713.66624pt>
+<immagini/cap4/profiler_original_road.png, id=496, 2569.6pt x 713.66624pt>
 File: immagini/cap4/profiler_original_road.png Graphic file (type png)
 <use immagini/cap4/profiler_original_road.png>
 Package pdftex.def Info: immagini/cap4/profiler_original_road.png  used on inpu
 t line 111.
 (pdftex.def)             Requested size: 386.41426pt x 107.31755pt.
-<immagini/cap4/profiler_splitted_road.png, id=473, 2569.6pt x 712.6625pt>
+<immagini/cap4/profiler_splitted_road.png, id=497, 2569.6pt x 712.6625pt>
 File: immagini/cap4/profiler_splitted_road.png Graphic file (type png)
 <use immagini/cap4/profiler_splitted_road.png>
 Package pdftex.def Info: immagini/cap4/profiler_splitted_road.png  used on inpu
@@ -1242,14 +1241,14 @@ t line 116.
  [31 <./immagini/cap4/hierarchy_road_monolitica.png> <./immagini/cap4/hierarchy
 _road_split.png>] [32 <./immagini/cap4/profiler_original_road.png> <./immagini/
 cap4/profiler_splitted_road.png>]
-<immagini/cap4/memory_profiler_baseline.png, id=492, 1484.54625pt x 638.385pt>
+<immagini/cap4/memory_profiler_baseline.png, id=516, 1484.54625pt x 638.385pt>
 File: immagini/cap4/memory_profiler_baseline.png Graphic file (type png)
 <use immagini/cap4/memory_profiler_baseline.png>
 Package pdftex.def Info: immagini/cap4/memory_profiler_baseline.png  used on in
 put line 139.
 (pdftex.def)             Requested size: 386.41426pt x 166.16125pt.
  [33] [34 <./immagini/cap4/memory_profiler_baseline.png>]
-<immagini/cap4/gameplay_area.png, id=504, 994.71625pt x 718.685pt>
+<immagini/cap4/gameplay_area.png, id=528, 994.71625pt x 718.685pt>
 File: immagini/cap4/gameplay_area.png Graphic file (type png)
 <use immagini/cap4/gameplay_area.png>
 Package pdftex.def Info: immagini/cap4/gameplay_area.png  used on input line 16
@@ -1262,7 +1261,7 @@ Overfull \hbox (31.93744pt too wide) in paragraph at lines 351--352
  []
 
 [40]
-<immagini/cap4/memory_profiler_optimized.png, id=681, 1376.14125pt x 627.34375p
+<immagini/cap4/memory_profiler_optimized.png, id=705, 1376.14125pt x 627.34375p
 t>
 File: immagini/cap4/memory_profiler_optimized.png Graphic file (type png)
 <use immagini/cap4/memory_profiler_optimized.png>
@@ -1280,7 +1279,7 @@ File: immagini/cap3/profiler_timeline_baseline.png Graphic file (type png)
 Package pdftex.def Info: immagini/cap3/profiler_timeline_baseline.png  used on 
 input line 9.
 (pdftex.def)             Requested size: 429.3521pt x 81.00923pt.
-<immagini/cap5/profiler_timeline_optimized.png, id=698, 1517.67pt x 280.04625pt
+<immagini/cap5/profiler_timeline_optimized.png, id=722, 1517.67pt x 280.04625pt
 >
 File: immagini/cap5/profiler_timeline_optimized.png Graphic file (type png)
 <use immagini/cap5/profiler_timeline_optimized.png>
@@ -1315,25 +1314,25 @@ Overfull \hbox (6.15985pt too wide) in paragraph at lines 53--63
  []
 
 [45]
-<immagini/cap5/map_chemical_2.png, id=721, 1927.2pt x 1084.05pt>
+<immagini/cap5/map_chemical_2.png, id=745, 1927.2pt x 1084.05pt>
 File: immagini/cap5/map_chemical_2.png Graphic file (type png)
 <use immagini/cap5/map_chemical_2.png>
 Package pdftex.def Info: immagini/cap5/map_chemical_2.png  used on input line 7
 8.
 (pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
-<immagini/cap5/map_chemical_1.png, id=722, 1927.2pt x 1084.05pt>
+<immagini/cap5/map_chemical_1.png, id=746, 1927.2pt x 1084.05pt>
 File: immagini/cap5/map_chemical_1.png Graphic file (type png)
 <use immagini/cap5/map_chemical_1.png>
 Package pdftex.def Info: immagini/cap5/map_chemical_1.png  used on input line 8
 2.
 (pdftex.def)             Requested size: 206.08716pt x 115.92107pt.
-<immagini/cap5/M1911-reload-chemical.png, id=723, 1517.67pt x 948.54375pt>
+<immagini/cap5/M1911-reload-chemical.png, id=747, 1517.67pt x 948.54375pt>
 File: immagini/cap5/M1911-reload-chemical.png Graphic file (type png)
 <use immagini/cap5/M1911-reload-chemical.png>
 Package pdftex.def Info: immagini/cap5/M1911-reload-chemical.png  used on input
  line 90.
 (pdftex.def)             Requested size: 206.08716pt x 128.8005pt.
-<immagini/cap5/SR18-idle-chemical.png, id=724, 1517.67pt x 948.54375pt>
+<immagini/cap5/SR18-idle-chemical.png, id=748, 1517.67pt x 948.54375pt>
 File: immagini/cap5/SR18-idle-chemical.png Graphic file (type png)
 <use immagini/cap5/SR18-idle-chemical.png>
 Package pdftex.def Info: immagini/cap5/SR18-idle-chemical.png  used on input li
@@ -1360,11 +1359,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28970 strings out of 467525
- 522231 string characters out of 5418983
- 1614023 words of memory out of 5000000
- 56773 multiletter control sequences out of 15000+600000
- 704774 words of font info for 370 fonts, out of 8000000 for 9000
+ 28989 strings out of 467525
+ 523156 string characters out of 5418983
+ 1614389 words of memory out of 5000000
+ 56790 multiletter control sequences out of 15000+600000
+ 704549 words of font info for 368 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  123i,20n,121p,1193b,2169s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
@@ -1375,10 +1374,10 @@ r/local/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb></usr/
 local/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texl
 ive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2026/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on out/main.pdf (48 pages, 42861127 bytes).
+Output written on out/main.pdf (48 pages, 42863598 bytes).
 PDF statistics:
- 855 PDF objects out of 1000 (max. 8388607)
- 729 compressed objects within 8 object streams
- 311 named destinations out of 1000 (max. 500000)
+ 880 PDF objects out of 1000 (max. 8388607)
+ 754 compressed objects within 8 object streams
+ 316 named destinations out of 1000 (max. 500000)
  75271 words of extra memory for PDF output out of 89155 (max. 10000000)
 

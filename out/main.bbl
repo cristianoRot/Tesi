@@ -19,6 +19,198 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{AkenineRealTimeRendering}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=f6061b73d9bdb8fceb556ed41cd144a6}{%
+           family={Akenine-Möller},
+           familyi={A\bibinithyphendelim M\bibinitperiod},
+           given={Tomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f2cd5883c9757f88d9a81f92ee663907}{%
+           family={Haines},
+           familyi={H\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=eed616961e0274036a96489be8cd147e}{%
+           family={Hoffman},
+           familyi={H\bibinitperiod},
+           given={Naty},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{dbfd5d60176b95f4ab27b0c00a1ff6fd}
+      \strng{fullhash}{dbfd5d60176b95f4ab27b0c00a1ff6fd}
+      \strng{fullhashraw}{dbfd5d60176b95f4ab27b0c00a1ff6fd}
+      \strng{bibnamehash}{dbfd5d60176b95f4ab27b0c00a1ff6fd}
+      \strng{authorbibnamehash}{dbfd5d60176b95f4ab27b0c00a1ff6fd}
+      \strng{authornamehash}{dbfd5d60176b95f4ab27b0c00a1ff6fd}
+      \strng{authorfullhash}{dbfd5d60176b95f4ab27b0c00a1ff6fd}
+      \strng{authorfullhashraw}{dbfd5d60176b95f4ab27b0c00a1ff6fd}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{4th}
+      \field{title}{Real-Time Rendering}
+      \field{year}{2018}
+    \endentry
+    \entry{GregoryGameEngine}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=b97f772b60bfb5bf77251b45263e44dd}{%
+           family={Gregory},
+           familyi={G\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Press}%
+      }
+      \strng{namehash}{b97f772b60bfb5bf77251b45263e44dd}
+      \strng{fullhash}{b97f772b60bfb5bf77251b45263e44dd}
+      \strng{fullhashraw}{b97f772b60bfb5bf77251b45263e44dd}
+      \strng{bibnamehash}{b97f772b60bfb5bf77251b45263e44dd}
+      \strng{authorbibnamehash}{b97f772b60bfb5bf77251b45263e44dd}
+      \strng{authornamehash}{b97f772b60bfb5bf77251b45263e44dd}
+      \strng{authorfullhash}{b97f772b60bfb5bf77251b45263e44dd}
+      \strng{authorfullhashraw}{b97f772b60bfb5bf77251b45263e44dd}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd}
+      \field{title}{Game Engine Architecture}
+      \field{year}{2018}
+    \endentry
+    \entry{HughesComputerGraphics}{book}{}{}
+      \name{author}{7}{}{%
+        {{hash=f301cb8654c4029713c65f456589d819}{%
+           family={Hughes},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=38b0810d6eb83eaf31dbf55609aeb0b6}{%
+           family={Dam},
+           familyi={D\bibinitperiod},
+           given={Andries},
+           giveni={A\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=b00c7506870712b7873df016c5094720}{%
+           family={McGuire},
+           familyi={M\bibinitperiod},
+           given={Morgan},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bc77d5b1a8ba5a49af6435159be2224c}{%
+           family={Sklar},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima F.},
+           giveni={D\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=61151e3691774bd7a6ecf72e3c15d034}{%
+           family={Foley},
+           familyi={F\bibinitperiod},
+           given={James\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=9ee938827b8287c3d03a5d33738bed30}{%
+           family={Feiner},
+           familyi={F\bibinitperiod},
+           given={Steven\bibnamedelima K.},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=46aaecf43ec225444bf8ff5134695ac4}{%
+           family={Akeley},
+           familyi={A\bibinitperiod},
+           given={Kurt},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley Professional}%
+      }
+      \strng{namehash}{13711f7603324c4f678da7468cd6a588}
+      \strng{fullhash}{3f43d72bbce4952a728cc5bbaf585ca1}
+      \strng{fullhashraw}{3f43d72bbce4952a728cc5bbaf585ca1}
+      \strng{bibnamehash}{13711f7603324c4f678da7468cd6a588}
+      \strng{authorbibnamehash}{13711f7603324c4f678da7468cd6a588}
+      \strng{authornamehash}{13711f7603324c4f678da7468cd6a588}
+      \strng{authorfullhash}{3f43d72bbce4952a728cc5bbaf585ca1}
+      \strng{authorfullhashraw}{3f43d72bbce4952a728cc5bbaf585ca1}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd}
+      \field{title}{Computer Graphics: Principles and Practice}
+      \field{year}{2013}
+    \endentry
+    \entry{ShirleyFundamentals}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=0da3e81a99db5b11351a274c385d0250}{%
+           family={Marschner},
+           familyi={M\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a5f91b214ec249b3087ff09da26168a4}{%
+           family={Shirley},
+           familyi={S\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {A K Peters}%
+      }
+      \strng{namehash}{67b53e1de5bc7ab12f0b63caea5a42ad}
+      \strng{fullhash}{67b53e1de5bc7ab12f0b63caea5a42ad}
+      \strng{fullhashraw}{67b53e1de5bc7ab12f0b63caea5a42ad}
+      \strng{bibnamehash}{67b53e1de5bc7ab12f0b63caea5a42ad}
+      \strng{authorbibnamehash}{67b53e1de5bc7ab12f0b63caea5a42ad}
+      \strng{authornamehash}{67b53e1de5bc7ab12f0b63caea5a42ad}
+      \strng{authorfullhash}{67b53e1de5bc7ab12f0b63caea5a42ad}
+      \strng{authorfullhashraw}{67b53e1de5bc7ab12f0b63caea5a42ad}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd}
+      \field{title}{Fundamentals of Computer Graphics}
+      \field{year}{2009}
+    \endentry
+    \entry{PharrPBRT}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=c69ff00a5e1719a4ad2dddd6254ac3c9}{%
+           family={Pharr},
+           familyi={P\bibinitperiod},
+           given={Matt},
+           giveni={M\bibinitperiod}}}%
+        {{hash=5f630e56bb6a31ced5d442a3b40cc68d}{%
+           family={Jakob},
+           familyi={J\bibinitperiod},
+           given={Wenzel},
+           giveni={W\bibinitperiod}}}%
+        {{hash=51e2894a269d907342539becd626aaed}{%
+           family={Humphreys},
+           familyi={H\bibinitperiod},
+           given={Greg},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Morgan Kaufmann}%
+      }
+      \strng{namehash}{560e3c41490c75198ea30b388f4f7912}
+      \strng{fullhash}{560e3c41490c75198ea30b388f4f7912}
+      \strng{fullhashraw}{560e3c41490c75198ea30b388f4f7912}
+      \strng{bibnamehash}{560e3c41490c75198ea30b388f4f7912}
+      \strng{authorbibnamehash}{560e3c41490c75198ea30b388f4f7912}
+      \strng{authornamehash}{560e3c41490c75198ea30b388f4f7912}
+      \strng{authorfullhash}{560e3c41490c75198ea30b388f4f7912}
+      \strng{authorfullhashraw}{560e3c41490c75198ea30b388f4f7912}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{3rd}
+      \field{title}{Physically Based Rendering: From Theory to Implementation}
+      \field{year}{2016}
+    \endentry
     \entry{UnityStaticBatching}{online}{}{}
       \name{author}{1}{}{%
         {{hash=3f56ad8f8e05fcad24de3fcf878fb50b}{%

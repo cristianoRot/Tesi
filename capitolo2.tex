@@ -4,9 +4,9 @@
 
 La \textit{High Definition Render Pipeline} (HDRP) rappresenta l'approccio moderno di Unity per la gestione del rendering ad alta fedeltà, progettato specificamente per piattaforme hardware di fascia alta \cite{UnityHDRP}. A differenza della precedente \textit{Built-in Render Pipeline}, la HDRP non è un sistema statico, ma costituisce un'implementazione avanzata della \textit{Scriptable Render Pipeline} (SRP). 
 
-L'architettura SRP introduce un cambio di paradigma fondamentale: il loop di rendering non è più codificato rigidamente all'interno del motore grafico, ma viene esposto tramite un'API C\#. Questo permette agli sviluppatori di estendere, modificare e ottimizzare il processo di disegno dei fotogrammi in base alle esigenze specifiche del progetto, un requisito essenziale per un lavoro di ottimizzazione mirato come quello richiesto da ARES.
+L'architettura SRP introduce un cambio di paradigma fondamentale: il loop di rendering non è più codificato rigidamente all'interno del motore grafico, ma viene esposto tramite un'API C\#. Questo permette agli sviluppatori di estendere, modificare e ottimizzare il processo di disegno dei fotogrammi in base alle esigenze specifiche del progetto, un requisito essenziale per un lavoro di ottimizzazione mirato come quello richiesto da ARES \cite{GregoryGameEngine}.
 
-Il pilastro filosofico della HDRP è il \textit{Physically Based Rendering} (PBR), un modello che mira a simulare l'interazione della luce con le superfici seguendo le leggi della fisica ottica. Per garantire tale coerenza, la pipeline opera esclusivamente in spazio colore lineare e utilizza calcoli in virgola mobile a 32 bit (FP32). Questo garantisce una gamma dinamica elevata (\textit{High Dynamic Range}), permettendo una gestione accurata di contrasti luminosi estremi e materiali complessi, ma introducendo al contempo un carico computazionale significativo che necessita di strategie di gestione della memoria e della GPU estremamente oculate.
+Il pilastro filosofico della HDRP è il \textit{Physically Based Rendering} (PBR), un modello che mira a simulare l'interazione della luce con le superfici seguendo le leggi della fisica ottica \cite{PharrPBRT}. Per garantire tale coerenza, la pipeline opera esclusivamente in spazio colore lineare e utilizza calcoli in virgola mobile a 32 bit (FP32) \cite{AkenineRealTimeRendering}. Questo garantisce una gamma dinamica elevata (\textit{High Dynamic Range}), permettendo una gestione accurata di contrasti luminosi estremi e materiali complessi, ma introducendo al contempo un carico computazionale significativo che necessita di strategie di gestione della memoria e della GPU estremamente oculate.
 
 
 \section{Gestione del carico computazionale}
@@ -15,7 +15,7 @@ Nel campo della computer grafica in tempo reale, la generazione di un fotogramma
 
 \subsection{Il costo delle Draw Call}
 
-Una \textit{draw call} può essere definita come un comando inviato dalla CPU alla GPU attraverso un'API grafica per istruire il processore grafico sul disegno di un determinato oggetto o di una porzione di geometria. Sebbene la GPU sia estremamente efficiente nel processare migliaia di poligoni in parallelo, la preparazione di ogni singolo comando di disegno comporta un costo significativo per la CPU, noto come \textit{overhead} del driver.
+Una \textit{draw call} può essere definita come un comando inviato dalla CPU alla GPU attraverso un'API grafica per istruire il processore grafico sul disegno di un determinato oggetto o di una porzione di geometria \cite{AkenineRealTimeRendering}. Sebbene la GPU sia estremamente efficiente nel processare migliaia di poligoni in parallelo, la preparazione di ogni singolo comando di disegno comporta un costo significativo per la CPU, noto come \textit{overhead} del driver \cite{GregoryGameEngine}.
 
 Ogni volta che viene invocata una \textit{draw call}, il processore deve eseguire diverse operazioni preliminari:
 \begin{itemize}
@@ -28,7 +28,7 @@ Quando il numero di questi comandi è eccessivo, la CPU non riesce a prepararli 
 
 \subsection{Cambiamenti di stato e SetPass Calls}
 
-Oltre al numero assoluto di \textit{draw call}, un impatto determinante sulla fluidità è dato dai cambiamenti di stato della GPU (\textit{State Changes}). Ogni volta che un oggetto richiede un materiale, una \textit{texture} o uno \textit{shader} differente rispetto all'oggetto precedente, la GPU deve riconfigurare il proprio stato operativo. 
+Oltre al numero assoluto di \textit{draw call}, un impatto determinante sulla fluidità è dato dai cambiamenti di stato della GPU (\textit{State Changes}). Ogni volta che un oggetto richiede un materiale, una \textit{texture} o uno \textit{shader} differente rispetto all'oggetto precedente, la GPU deve riconfigurare il proprio stato operativo \cite{AkenineRealTimeRendering, GregoryGameEngine}. 
 
 Queste operazioni, spesso identificate in Unity come \textit{SetPass calls}, sono estremamente onerose. Una sequenza di \textit{draw call} che condividono lo stesso stato è molto più rapida da eseguire rispetto a una sequenza che richiede continui cambiamenti di configurazione. L'obiettivo dell'ottimizzazione grafica, dunque, non è solo la riduzione del numero di oggetti a schermo, ma la minimizzazione delle interazioni costose tra processore e scheda video attraverso tecniche di raggruppamento dei dati.
 
@@ -36,7 +36,7 @@ Queste operazioni, spesso identificate in Unity come \textit{SetPass calls}, son
 
 \subsection{Definizione}
 
-Per ovviare ai limiti imposti dall'elevato numero di \textit{draw call}, la tecnica principale nel campo del \textit{real-time rendering} è il \textit{batching}. Il termine definisce il processo di raggruppamento di più geometrie elementari in un unico blocco di dati da inviare alla GPU con un solo comando di disegno.
+Per ovviare ai limiti imposti dall'elevato numero di \textit{draw call}, la tecnica principale nel campo del \textit{real-time rendering} è il \textit{batching} \cite{AkenineRealTimeRendering}. Il termine definisce il processo di raggruppamento di più geometrie elementari in un unico blocco di dati da inviare alla GPU con un solo comando di disegno \cite{GregoryGameEngine}.
 
 Il presupposto fondamentale affinché il \textit{batching} sia efficace è la condivisione dello stato di rendering. Due o più oggetti possono essere raggruppati in un unico \textit{batch} solo se condividono le medesime proprietà grafiche, tra cui:
 \begin{itemize}
@@ -85,7 +85,7 @@ for each Material M in Scene:
 
 \subsection{GPU Instancing} 
 
-È la tecnica principale per renderizzare molteplici copie dello stesso modello geometrico utilizzando un set di dati condiviso. A differenza del \textit{static batching}, questa tecnica non genera una nuova \textit{mesh} combinata; il motore invia alla GPU un'unica copia dei dati geometrici (vertici e indici) insieme a un \textit{array} di dati variabili, definiti \textit{per-instance data} (come matrici di trasformazione o variazioni di colore) \cite{UnityGPUInstancing}.
+È la tecnica principale per renderizzare molteplici copie dello stesso modello geometrico utilizzando un set di dati condiviso \cite{AkenineRealTimeRendering}. A differenza del \textit{static batching}, questa tecnica non genera una nuova \textit{mesh} combinata; il motore invia alla GPU un'unica copia dei dati geometrici (vertici e indici) insieme a un \textit{array} di dati variabili, definiti \textit{per-instance data} (come matrici di trasformazione o variazioni di colore) \cite{UnityGPUInstancing}.
 
 La GPU è quindi in grado di eseguire un ciclo di rendering interno estremamente efficiente, disegnando l'oggetto $N$ volte con una singola \textit{draw call}.
 
@@ -143,13 +143,13 @@ In questo scenario, il carico di lavoro del processore si riduce drasticamente, 
 
 \subsection{Definizione di Shader}
 
-Uno \textit{shader} è un programma, scritto in un linguaggio di alto livello, progettato per essere eseguito direttamente sulle unità di calcolo parallelo della GPU. A differenza degli algoritmi eseguiti sulla CPU, che operano su flussi di dati generici, lo \textit{shader} ha il compito esclusivo di istruire il processore grafico su come trasformare i dati geometrici in informazioni visive (\textit{pixel}).
+Uno \textit{shader} è un programma, scritto in un linguaggio di alto livello, progettato per essere eseguito direttamente sulle unità di calcolo parallelo della GPU \cite{AkenineRealTimeRendering}. A differenza degli algoritmi eseguiti sulla CPU, che operano su flussi di dati generici, lo \textit{shader} ha il compito esclusivo di istruire il processore grafico su come trasformare i dati geometrici in informazioni visive (\textit{pixel}) \cite{HughesComputerGraphics}.
 
 Il vantaggio fondamentale dello \textit{shader} risiede nell'architettura parallela della GPU: lo stesso codice viene eseguito contemporaneamente per migliaia di elementi diversi, garantendo una velocità di elaborazione che sarebbe impossibile da raggiungere con un'esecuzione sequenziale tradizionale.
 
 \subsection{Classificazione degli Shader nella Pipeline Programmabile}
 
-All'interno della moderna \textit{Graphics Pipeline}, le diverse fasi di elaborazione possono essere classificate in base alla loro flessibilità e necessità di implementazione da parte dello sviluppatore. Ogni blocco svolge una specifica funzione nel trasformare i dati in ingresso nell'immagine finale a schermo.
+All'interno della moderna \textit{Graphics Pipeline}, le diverse fasi di elaborazione possono essere classificate in base alla loro flessibilità e necessità di implementazione da parte dello sviluppatore \cite{AkenineRealTimeRendering, ShirleyFundamentals}. Ogni blocco svolge una specifica funzione nel trasformare i dati in ingresso nell'immagine finale a schermo.
 
 \begin{figure}[H]
     \centering
@@ -177,4 +177,4 @@ Le macro-categorie che compongono l'architettura della pipeline sono:
     \end{itemize}
 \end{itemize}
 
-L'interazione tra questi blocchi permette un controllo granulare su ogni fase del rendering, partendo dal \textit{Vertex Fetch} dei dati (posizione 3D, vettori normali, colori e coordinate di \textit{texture}) fino alle operazioni finali sul \textit{Framebuffer}, dove i frammenti subiscono test di visibilità e profondità prima di essere scritti a schermo.
+L'interazione tra questi blocchi permette un controllo granulare su ogni fase del rendering, partendo dal \textit{Vertex Fetch} dei dati (posizione 3D, vettori normali, colori e coordinate di \textit{texture}) fino alle operazioni finali sul \textit{Framebuffer}, dove i frammenti subiscono test di visibilità e profondità prima di essere scritti a schermo \cite{AkenineRealTimeRendering, HughesComputerGraphics}.
